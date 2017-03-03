@@ -1,0 +1,8 @@
+#!/bin/bash
+#
+# Kill ibus-daemon
+
+pidof ibus-daemon > /dev/null
+if [[ $? -ne 1 ]] ; then
+  kill -9 $(pidof ibus-daemon | awk '{print $1}')
+fi
