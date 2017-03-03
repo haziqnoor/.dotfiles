@@ -20,21 +20,19 @@ Symlink few of the files to `~`:
 
 Then you can make changes you normally do using the symlinks:
 
-   bash: `~/.bashrc`, `~/.bash_profile`, `~/bash_logout`.
-
-   zsh: `~/.zshrc`, `~/.zshenv`, `~/.zprofile`.
-
-   `~/.profile`, `~/.inputrc`.
+&emsp;bash: `~/.bashrc`, `~/.bash_profile`, `~/bash_logout`.<br/>
+&emsp;zsh: `~/.zshrc`, `~/.zshenv`, `~/.zprofile`.<br/>
+&emsp;`~/.profile`, `~/.inputrc`.<br/>
 
 ## Customization
 
-To modify `$PATH` and put environment variables that will run on all shells, edit `~/.dotfiles/shell-startup/shell/login`.
+To modify `$PATH` and put environment variables that will run on all
+shells, edit `~/.dotfiles/shell-startup/shell/login`.
 
 To add specific settings for `zsh` or `bash`, edit:
 
-   `~/.zshrc`
-
-   `~/.bashrc`
+&emsp;`~/.zshrc`<br/>
+&emsp;`~/.bashrc`<br/>
 
 To auto `startx` during login, edit `~/.profile`:
 ```
@@ -44,6 +42,7 @@ if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
 fi
 ```
 
-To prevent displaying stuff during login (don't need to see them when auto-starting X):
+To prevent displaying stuff during login (don't need to see them when
+auto-starting X):
 
     if [ ! -f ~/.hushlogin ]; then touch ~/.hushlogin; fi
