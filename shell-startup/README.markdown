@@ -20,17 +20,18 @@ Symlink few of the files to `~`:
 
 Then you can make changes you normally do using the symlinks:
 
-* bash: `~/.bashrc`, `~/.bash_profile`, `~/bash_logout`
-* zsh: `~/.zshrc`, `~/.zshenv`, `~/.zprofile`.
-* `~/.profile`, `~/.inputrc`.
+  bash: `~/.bashrc`, `~/.bash_profile`, `~/bash_logout`.
+  zsh: `~/.zshrc`, `~/.zshenv`, `~/.zprofile`.
+  `~/.profile`, `~/.inputrc`.
 
 ## Customization
 
 To modify `$PATH` and put environment variables that will run on all shells, edit `~/.dotfiles/shell-startup/shell/login`.
 
 To add specific settings for `zsh` or `bash`, edit:
-    * `~/.zshrc`
-    * `~/.bashrc`
+
+  `~/.zshrc`
+  `~/.bashrc`
 
 To auto `startx` during login, edit `~/.profile`:
 ```
