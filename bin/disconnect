@@ -1,0 +1,6 @@
+#!/bin/bash
+
+nmcli dev discon wls1
+sudo systemctl stop tor.service ntpd.service
+notify-send -i ~/.icons/Clarity/16x16/status/network-offline.png \
+  'Network Manager' 'Wireless Disabled'

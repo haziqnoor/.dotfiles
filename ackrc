@@ -1,0 +1,21 @@
+# General Ack Settings
+####################################################################
+
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+# turn on colors
+--color
+
+# Ack Type Settings
+####################################################################
+
+# add markdown
+--type-set=md=.md,.mdown,.markdown,.mkdn
+# plain text CSV files
+--type-set=csv=.txt,.csv,.tsv
+
+# ignore pdf files
+--type-add=pdf=.pdf
+--type=nopdf

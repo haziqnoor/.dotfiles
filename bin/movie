@@ -1,0 +1,33 @@
+#!/bin/bash
+# This is a script to manage mplayer sessions.
+
+MSG="\n
+To play a video: movie /path/to/file [vol-gain]\n
+To play a DVD: movie dvd [vol-gain]\n
+To play a VCD: movie vcd [track#] [vol-gain]\n
+To play a DVD.iso: movie iso /path/to/iso [vol-gain]\n
+To play using mono audio: movie mono /path/to/file [vol-gain]\n
+To play video with its horizontals flipped: movie mirror /path/to/file [vol-gain]\n
+\n
+Note:\n
+[vol-gain] is the desired volume gain in dB (e.g. 20 is +20dB). Omit it to play at normal volume."
+
+if [ $# -lt 1 ]; then
+	echo -e $MSG
+	exit 1
+elif [[ "$1" == "--help" ]]; then
+	echo -e "tm is a wrapper to manage tmux sessions."
+	echo -e $MSG
+	exit 1
+elif [[ "$1" == "dvd" ]]; then
+    mplayer -af volume=$2:1 dvdnav://0 -mouse-movements
+elif [[ "$1" == "iso" ]]; then
+    mplayer -af volume=$3:1 dvdnav://0 -mouse-movements -dvd-device $2
+elif [[ "$1" == "vcd" ]]; then
+    mplayer -af volume=$3:1 vcd://$2
+elif [[ "$1" == "mono" ]]; then
+    mplayer -af volume=$3:1 extrastereo=0 "$2"
+elif [[ "$1" == "mirror" ]]; then
+    mplayer -vf mirror "$2"
+else mplayer -af volume=$2:1 "$1"
+fi

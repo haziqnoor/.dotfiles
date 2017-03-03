@@ -1,0 +1,19 @@
+#! /bin/bash
+# remind me, its important!
+# Swapped from <http://linux4all.dreamwidth.org/14455.html>
+# Requires `at`
+# usage:
+# remme 50m Change laundry
+# remme @17:30 Wake mom up for dinner
+
+title="Reminder"
+message="${@:2}"
+
+if [[ "${1:0:1}" == "@" ]]
+then
+    echo "notify-send -t 0 -i dialog-information \"$title\" \"$message\" && \
+      canberra-gtk-play -i alarm-clock-elapsed" | at ${1:1} >/dev/null 2>&1
+else
+    sleep $1 && notify-send -t 0 -i dialog-information "$title" "$message" && \
+      canberra-gtk-play -i alarm-clock-elapsed >/dev/null 2>&1 &
+fi

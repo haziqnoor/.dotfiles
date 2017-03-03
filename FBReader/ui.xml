@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <group name="Indicator">
+    <option name="PositionText" value="true"/>
+    <option name="ShowTOCMarks" value="true"/>
+  </group>
+  <group name="InfoDialog">
+    <option name="Height" value="597"/>
+    <option name="SelectedTab" value="Tags"/>
+    <option name="Width" value="810"/>
+  </group>
+  <group name="LibraryOptionsDialog">
+    <option name="SelectedTab" value="Library"/>
+  </group>
+  <group name="LookAndFeelOptionsDialog">
+    <option name="Height" value="303"/>
+    <option name="SelectedTab" value="Styles"/>
+  </group>
+  <group name="NetworkOptionsDialog">
+    <option name="SelectedTab" value="Connection"/>
+  </group>
+  <group name="OpenFileDialog">
+    <option name="Directory" value="/home"/>
+    <option name="File" value="/home/haziq"/>
+    <option name="Height" value="418"/>
+    <option name="Width" value="621"/>
+    <option name="X" value="207"/>
+    <option name="Y" value="96"/>
+  </group>
+  <group name="Options">
+    <option name="Height" value="581"/>
+    <option name="Width" value="1022"/>
+    <option name="WindowState" value="2"/>
+    <option name="XPosition" value="0"/>
+    <option name="YPosition" value="16"/>
+  </group>
+  <group name="ReadingOptionsDialog">
+    <option name="Height" value="320"/>
+    <option name="SelectedTab" value="Keys"/>
+    <option name="Width" value="544"/>
+  </group>
+  <group name="Style">
+    <option name="Base:fontFamily" value="Adobe Garamond Pro"/>
+    <option name="Preformatted text:fontFamily" value="Courier"/>
+    <option name="UseCustomFonts" value="true"/>
+  </group>
+  <group name="SystemOptionsDialog">
+    <option name="SelectedTab" value="Language"/>
+  </group>
+  <group name="ToggleButtonGroup">
+    <option name="booksOrder" value="byAuthor"/>
+  </group>
+</config>

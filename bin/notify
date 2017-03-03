@@ -1,0 +1,12 @@
+#! /bin/bash
+# notify <cmd>
+
+task="$1"
+cmd=`"${@:1}"`
+
+if [ $# -lt 1 ]; then
+    echo 'Input argument is not given. Usage: notify <cmd>' >&2
+    exit 1
+fi
+echo "$cmd" && notify-send -t 0 "$task" "Done." \
+  && canberra-gtk-play -i complete -V 10.0

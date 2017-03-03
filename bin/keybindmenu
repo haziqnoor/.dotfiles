@@ -1,0 +1,24 @@
+#!/bin/bash
+read -d '' BINDS <<EOF
+\
+st <Super-S-Enter>
+dmenu <Super-p>
+PCManFM <Super-f>
+surf <Super-s>
+vim <Super-v>
+GIMP <Super-g>
+Transmission <Super-t>
+ncmpc <Super-m>
+ProtonMail.com <Super-e>
+Chromium <Super-o>
+Newsbeuter <Super-n>
+Wireless Connect <Super-F9>
+Wireless Disconnect <Super-F10>
+Unmount All Devices <Super-u>
+Keybind Menu <Super-\`>
+Show previous notifications <C-\`>
+Close notification <Spacebar>
+Close all notification <C-Spacebar>
+EOF
+notify-send -i ~/.icons/Clarity/16x16/devices/keyboard.png \
+  -t 0 "Keybindings" "${BINDS}"

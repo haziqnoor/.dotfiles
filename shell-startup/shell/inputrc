@@ -1,0 +1,32 @@
+# This file controls the behaviour of line input editing for
+# programs that use the GNU Readline library.  Existing
+# programs include FTP, Bash, and GDB.
+#
+# You can re-read the inputrc file with <C-x><C-r>.
+
+# Make Tab autocomplete regardless of filename case
+set completion-ignore-case on
+
+# a single `<Tab>` when a partial or no completion is possible (instead of tapping twice)
+set show-all-if-ambiguous on
+
+# skip completed text
+set skip-completed-text on
+
+# a character denoting a file's type is appended to the filename when listing possible completion
+set visible-stats
+
+# vi key bindings
+set editing-mode vi
+
+# mark symlinked directories
+set mark-symlinked-directories on
+
+# Flip through autocompletion matches with `<S-Tab>`.
+# "\e[Z": menu-complete
+
+# Filtered history search
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+"\C-p": history-search-backward
+"\C-n": history-search-forward

@@ -1,0 +1,64 @@
+#!/bin/bash
+
+mkdir -p ~/.config
+mkdir -p ~/.local/share
+
+# Shell startup Files
+ln -svf ~/.dotfiles/shell-startup/zsh/interactive ~/.zshrc
+ln -svf ~/.dotfiles/shell-startup/zsh/env ~/.zshenv
+ln -svf ~/.dotfiles/shell-startup/bash/logout ~/.bash_logout
+ln -svf ~/.dotfiles/shell-startup/zsh/zprofile ~/.zprofile
+ln -svf ~/.dotfiles/shell-startup/shell/profile ~/.profile
+ln -svf ~/.dotfiles/shell-startup/bash/bashrc ~/.bashrc
+ln -svf ~/.dotfiles/shell-startup/bash/bash_profile ~/.bash_profile
+ln -svf ~/.dotfiles/shell-startup/shell/inputrc ~/.inputrc
+if [ ! -f ~/.hushlogin ]; then touch ~/.hushlogin; fi
+mkdir -p ~/.zkbd
+ln -svf ~/.dotfiles/shell-startup/zsh/zkbd/st-256color-:0 ~/.zkbd/st-256color-:0
+mkdir -p ~/.config/liquidprompt
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquidpromptrc ~/.liquidpromptrc
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.ps1 \
+  ~/.config/liquidprompt/liquid.ps1
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.theme \
+  ~/.config/liquidprompt/liquid.theme
+
+# git
+ln -svf ~/.dotfiles/git/gitconfig ~/.gitconfig
+ln -svf ~/.dotfiles/git/githelpers ~/.githelpers
+ln -svf ~/.dotfiles/git/cvsignore ~/.cvsignore  # global .gitignore
+
+# vim
+ln -svf ~/.dotfiles/vim/vimrc ~/.vimrc
+if [ ! -d ~/.vim/ ]; then ln -svf \
+  ~/.dotfiles/vim/ ~/.vim > /dev/null 2>&1; fi
+
+# X11
+ln -svf ~/.dotfiles/X11/xbindkeysrc ~/.xbindkeysrc
+ln -svf ~/.dotfiles/X11/xinitrc ~/.xinitrc
+
+ln -svf ~/.dotfiles/ackrc ~/.ackrc
+ln -svf ~/.dotfiles/asoundrc ~/.asoundrc
+ln -svf ~/.dotfiles/Rprofile ~/.Rprofile
+ln -svf ~/.dotfiles/tmux.conf ~/.tmux.conf
+ln -svf ~/.dotfiles/toprc ~/.toprc
+
+mkdir -p ~/.config/conky
+ln -svf ~/.dotfiles/conky.conf ~/.config/conky/conky.conf
+mkdir -p ~/.config/dunst
+ln -svf ~/.dotfiles/dunstrc ~/.config/dunst/dunstrc
+mkdir -p ~/.mpd
+ln -svf ~/.dotfiles/mpd.conf ~/.mpd/mpd.conf
+mkdir -p ~/.newsbeuter
+ln -svf ~/.dotfiles/newsbeuter/config ~/.newsbeuter/config
+ln -svf ~/.dotfiles/newsbeuter/urls ~/.newsbeuter/urls
+mkdir -p ~/.surf
+ln -svf ~/.dotfiles/surf/script.js ~/.surf/script.js
+mkdir -p ~/.mplayer
+ln -svf ~/.dotfiles/mplayer/config ~/.mplayer/config
+ln -svf ~/.dotfiles/mplayer/input.conf ~/.mplayer/input.conf
+mkdir -p ~/.ncmpc
+ln -svf ~/.dotfiles/ncmpc/config ~/.ncmpc/config
+ln -svf ~/.dotfiles/ncmpc/keys ~/.ncmpc/keys
+mkdir -p ~/.FBReader
+ln -svf ~/.dotfiles/FBReader/options.xml ~/.FBReader/options.xml
+ln -svf ~/.dotfiles/FBReader/ui.xml ~/.FBReader/ui.xml

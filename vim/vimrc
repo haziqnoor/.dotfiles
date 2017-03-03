@@ -1,0 +1,379 @@
+"----- 1 important
+
+" forget compatibility with vi
+set nocompatible
+
+" treat pathogen.vim as a submodule like other plugins
+source ~/src/vim-plugins/vim-pathogen/autoload/pathogen.vim
+" runtime path manipulation using 'plugin/' as dir name; passing absolute path
+execute pathogen#infect('vim-plugins/{}', '~/src/vim-plugins/{}')
+execute pathogen#helptags()
+
+"----- 2 moving around, searching and patterns
+
+" show match for partly typed search command
+set incsearch
+" ignore case when using a search pattern
+set ignorecase
+" override 'ignorecase' when pattern has upper case characters
+set smartcase
+
+" ----- 3 tags
+" ----- 4 displaying text
+
+" long lines wrap
+set wrap
+" wrap long lines at a character in 'breakat'
+set linebreak
+" string to put before wrapped screen lines
+set showbreak=↪
+" show <Tab> and EOL symbols
+"set list listchars=tab:▸\ ,eol:¬
+" show the line number for each line
+set number
+
+" ----- 5 syntax, highlighting and spelling
+
+" colorscheme
+colorscheme zenburn
+" type of file; triggers the FileType even when set
+filetype plugin indent on
+" name of syntax highlighting used (local to buffer)
+syntax on
+" highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=235 guibg=#262626
+match ExtraWhitespace /\s\+$/
+" highlight all matches for the last used search pattern
+set hlsearch
+" highlight the screen line of the cursor
+set cursorline
+
+" ----- 6 multiple windows
+
+" don't unload a buffer when no longer shown in a window
+set hidden
+
+" ----- 7 multiple tab pages
+" ----- 8 terminal
+" ----- 9 using the mouse
+" ----- 10 printing
+" ----- 11 messages and info
+
+" show (partial) command keys in the status line
+set showcmd
+" show cursor position below each window
+set ruler
+
+" ----- 12 selecting text
+" ----- 13 editing text
+
+" allow backspacing over everything in insert mode:
+set backspace=indent,eol,start
+" when inserting a bracket, briefly jump to its match
+set showmatch
+" insert only one space when joining lines
+set nojoinspaces
+" use decimal base number instead of octal
+set nrformats-=octal
+
+" ----- 14 tabs and indenting
+
+" number of spaces a <Tab> in the text stands for
+set tabstop=4
+" number of spaces used for each step of (auto)indent
+set shiftwidth=4
+" a <Tab> in an indent inserts 'shiftwidth' spaces
+set softtabstop=4
+" round to 'shiftwidth' for '<<' and '>>'
+set shiftround
+" expand <Tab> to spaces in Insert mode
+set expandtab
+" automatically set the indent of a new line
+set autoindent
+" do clever autoindenting
+set smartindent
+
+" ----- 15 folding
+
+" turn folding off
+set nofoldenable
+" folding type
+set foldmethod=manual
+
+" ----- 16 diff mode
+" ----- 17 mapping
+
+" set leader key
+let mapleader=","
+
+" clear the search buffer when hitting return
+nnoremap <leader><cr> :nohlsearch<cr>
+
+" toggle spelling on/off
+nnoremap <F5> :setlocal spell! spelllang=en_us<CR>
+
+" toggle relative line numbers on/off
+nnoremap <F6> :setlocal relativenumber!<CR>
+
+" prevent from entering Ex mode
+nnoremap Q <nop>
+
+" avoid cursor keys when recalling commands from history
+cnoremap <C-n> <Down>
+cnoremap <C-p> <Up>
+
+" save file as su
+cnoremap w!! %!sudo dd of=%
+"cmap w!! %!sudo tee > /dev/null %
+
+" disable arrows, F1 keys
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+nnoremap <F1> <nop>
+inoremap <F1> <nop>
+
+" fixing the `&` command
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+
+" toggle between files in buffer
+nnoremap <leader><leader> <c-^>
+
+" easier system clipboard
+map <leader>y "+y
+map <leader>p "+p
+map <leader>P "+P
+
+" move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" open files in directory of current file
+cnoremap <expr> %% expand('%:h').'/'
+map <leader>e :edit %%
+map <leader>v :view %%
+
+" close all buffer that's close-able
+nnoremap :bda :bufdo bd
+
+" add a newline over/below current line
+nnoremap [<Space> O<Esc>j
+nnoremap ]<Space> o<Esc>k
+
+" swap current line with line above/below
+nnoremap [e kddpk
+nnoremap ]e ddp
+
+" go to next/previous in buffer
+nnoremap ]b :bnext<cr>
+nnoremap [b :bprevious<cr>
+
+" go to next/previous in quicklist
+nnoremap ]q :cn<cr>
+nnoremap [q :cp<cr>
+
+" go to next/previous in tags
+nnoremap ]t :tn<cr>
+nnoremap [t :tp<cr>
+
+" ----- 18 reading and writing files
+
+" enable using settings from modelines when reading a file
+set modeline
+" number of lines to check for modelines
+set modelines=3
+" end-of-line format
+set fileformat=unix
+" don't write a backup file before overwriting a file
+set nowritebackup
+" don't keep a backup after overwriting a file
+set nobackup
+" list of directories to put backup files in
+set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" automatically read a file when it was modified outside of vim
+set autoread
+
+" ----- 19 the swap file
+
+" list of directories for the swap file
+set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+" don't use swapfiles
+set noswapfile
+
+" ----- 20 command line editing
+
+" specify how command line completion works
+set wildmode=longest,list
+" list of patterns to ignore files for file name completion
+set wildignore+=*.tif,*.tiff,*.shp,*.svg,*.png,*.jpg,*.xcf,*.gif,*.sla,*.CR2,*.epub,*.mobi,*.pdf,*.mp4,*.mp3,*.wav,*.flv,*.ogv,*.m4v,*.avi,*.mov,*.wmv,*.ods,*.rar,*.zip,*.bz2,*.7z,*.gz,*.gpx,*.pyc,*.swf
+" command-line completion shows a list of matches
+set wildmenu
+
+" ----- 21 executing external commands
+
+" name of the shell program used for external commands
+set shell=zsh
+
+" ----- 22 running make and jumping to errors
+" ----- 23 language specific
+" ----- 24 multi-byte characters
+
+" character encoding used in vim
+set encoding=utf-8
+" character encoding for the current file
+set fileencoding=utf-8
+
+" ----- 25 various
+
+" don't capture all global options when using vim sessions
+set sessionoptions-=options
+
+" list that specifies what to write in the viminfo file
+set viminfo=
+
+" prevents the iskeyword change so it can't hurt anyone
+let g:sh_noisk=1
+
+" enable fenced code block syntax highlighting in markdown documents
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+" let g:markdown_syntax_conceal = 0
+
+" eregex.vim settings
+let g:eregex_default_enable = 1 " enable eregex
+let g:eregex_forward_delim = '/' " forward search delimiter
+let g:eregex_backward_delim = '?' " backward search delimiter
+nnoremap <leader>/ :call eregex#toggle()<CR>
+
+" Command-T settings
+let g:CommandTFileScanner='find'
+let g:CommandTTraverseSCM='pwd'
+let g:CommandTMatchWindowReverse=0
+let g:CommandTCancelMap=['<C-x>', '<C-c>', '<ESC>', '<C-[>']
+let g:CommandTCursorLeftMap=['<Left>']
+let g:CommandTBackspaceMap=['<C-h>','<BS>']
+let g:CommandTDeleteMap=['<Del>']
+
+" highlight trailing whitespace when opening new buffers
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+" hide trailing whitespace highlight when typing in Insert mode
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+" handle successive calls of the match command gracefully
+autocmd BufWinLeave * call clearmatches()
+
+" auto-reload .vimrc
+augroup vimrcEx
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+" visual `*` to search for current selection
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+
+" indent if we're at the beginning of a line; else, do completion
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <expr> <tab> InsertTabWrapper()
+inoremap <s-tab> <c-n>
+
+" rename current file
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+
+" increment selected numbers
+function! Incr()
+  let a = line('.') - line("'<")
+  let c = virtcol("'<")
+  if a > 0
+    execute 'normal! '.c.'|'.a."\<C-a>"
+  endif
+  normal `<
+endfunction
+vnoremap <C-a> :call Incr()<CR>
+
+" Change working directory
+" ~/docs
+function! CWDdocs()
+    cd ~/docs
+    set noautochdir
+    pwd
+endfunction
+cnoremap cdd :call CWDdocs()
+" ~/logs/
+function! CWDlogs()
+    cd ~/logs
+    set noautochdir
+    pwd
+endfunction
+cnoremap cdl :call CWDlogs()
+" ~/src/
+function! CWDsrc()
+    cd ~/src
+    set noautochdir
+    pwd
+endfunction
+cnoremap cds :call CWDsrc()
+" ~/tmp/
+function! CWDtmp()
+    cd ~/tmp
+    set noautochdir
+    pwd
+endfunction
+cnoremap cdt :call CWDtmp()
+" ~/projects/
+function! CWDproj()
+    cd ~/projects
+    set noautochdir
+    pwd
+endfunction
+cnoremap cdp :call CWDproj()
+" Make current filepath as working directory
+function! CWDfilepath()
+    set autochdir
+    pwd
+endfunction
+cnoremap cdf :call CWDfilepath()
+
+" turn on Word Processor Mode for current buffer
+function! WordProcessorMode()
+    setlocal formatoptions=1
+    setlocal noexpandtab
+    map j gj
+    map k gk
+    setlocal spell spelllang=en_us
+    " set thesaurus+=/home/haziq/.vim/thesaurus/mthesaur.txt
+    setlocal complete+=s
+    setlocal formatprg=par
+    setlocal wrap
+    setlocal linebreak
+endfunction
+com! WP call WordProcessorMode()

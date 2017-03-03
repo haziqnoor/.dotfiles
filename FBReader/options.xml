@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <group name="Keys">
+    <option name="Action0" value="pageBackward"/>
+    <option name="Action1" value="pageForward"/>
+    <option name="Action10" value="lineForward"/>
+    <option name="Action11" value="lineBackward"/>
+    <option name="Action12" value="none"/>
+    <option name="Action13" value="none"/>
+    <option name="Action14" value="quit"/>
+    <option name="Action15" value="none"/>
+    <option name="Action16" value="clearSelection"/>
+    <option name="Action17" value="none"/>
+    <option name="Action18" value="bookInfo"/>
+    <option name="Action2" value="search"/>
+    <option name="Action3" value="pageBackward"/>
+    <option name="Action4" value="pageForward"/>
+    <option name="Action5" value="gotoSectionEnd"/>
+    <option name="Action6" value="quit"/>
+    <option name="Action7" value="rotate"/>
+    <option name="Action8" value="toggleFullscreen"/>
+    <option name="Action9" value="gotoHome"/>
+    <option name="Key0" value="&lt;,&gt;"/>
+    <option name="Key1" value="&lt;.&gt;"/>
+    <option name="Key10" value="&lt;J&gt;"/>
+    <option name="Key11" value="&lt;K&gt;"/>
+    <option name="Key12" value="&lt;L&gt;"/>
+    <option name="Key13" value="&lt;LeftArrow&gt;"/>
+    <option name="Key14" value="&lt;Q&gt;"/>
+    <option name="Key15" value="&lt;R&gt;"/>
+    <option name="Key16" value="&lt;Return&gt;"/>
+    <option name="Key17" value="&lt;RightArrow&gt;"/>
+    <option name="Key18" value="&lt;W&gt;"/>
+    <option name="Key2" value="&lt;/&gt;"/>
+    <option name="Key3" value="&lt;Ctrl&gt;+&lt;B&gt;"/>
+    <option name="Key4" value="&lt;Ctrl&gt;+&lt;F&gt;"/>
+    <option name="Key5" value="&lt;Ctrl&gt;+&lt;G&gt;"/>
+    <option name="Key6" value="&lt;Ctrl&gt;+&lt;Q&gt;"/>
+    <option name="Key7" value="&lt;Ctrl&gt;+&lt;R&gt;"/>
+    <option name="Key8" value="&lt;F&gt;"/>
+    <option name="Key9" value="&lt;G&gt;"/>
+    <option name="Number" value="19"/>
+  </group>
+  <group name="Keys180">
+    <option name="Action0" value="rotate"/>
+    <option name="Action1" value="gotoHome"/>
+    <option name="Action2" value="none"/>
+    <option name="Key0" value="&lt;Ctrl&gt;+&lt;R&gt;"/>
+    <option name="Key1" value="&lt;G&gt;"/>
+    <option name="Key2" value="&lt;R&gt;"/>
+    <option name="Number" value="3"/>
+  </group>
+  <group name="Keys270">
+    <option name="Action0" value="pageForward"/>
+    <option name="Action1" value="pageBackward"/>
+    <option name="Action10" value="lineForward"/>
+    <option name="Action11" value="pageBackward"/>
+    <option name="Action12" value="pageForward"/>
+    <option name="Action13" value="quit"/>
+    <option name="Action14" value="none"/>
+    <option name="Action15" value="clearSelection"/>
+    <option name="Action16" value="lineBackward"/>
+    <option name="Action17" value="none"/>
+    <option name="Action2" value="search"/>
+    <option name="Action3" value="gotoSectionEnd"/>
+    <option name="Action4" value="rotate"/>
+    <option name="Action5" value="none"/>
+    <option name="Action6" value="toggleFullscreen"/>
+    <option name="Action7" value="gotoHome"/>
+    <option name="Action8" value="lineForward"/>
+    <option name="Action9" value="lineBackward"/>
+    <option name="Key0" value="&lt;,&gt;"/>
+    <option name="Key1" value="&lt;.&gt;"/>
+    <option name="Key10" value="&lt;LeftArrow&gt;"/>
+    <option name="Key11" value="&lt;PageDown&gt;"/>
+    <option name="Key12" value="&lt;PageUp&gt;"/>
+    <option name="Key13" value="&lt;Q&gt;"/>
+    <option name="Key14" value="&lt;R&gt;"/>
+    <option name="Key15" value="&lt;Return&gt;"/>
+    <option name="Key16" value="&lt;RightArrow&gt;"/>
+    <option name="Key17" value="&lt;UpArrow&gt;"/>
+    <option name="Key2" value="&lt;/&gt;"/>
+    <option name="Key3" value="&lt;Ctrl&gt;+&lt;G&gt;"/>
+    <option name="Key4" value="&lt;Ctrl&gt;+&lt;R&gt;"/>
+    <option name="Key5" value="&lt;DownArrow&gt;"/>
+    <option name="Key6" value="&lt;F&gt;"/>
+    <option name="Key7" value="&lt;G&gt;"/>
+    <option name="Key8" value="&lt;H&gt;"/>
+    <option name="Key9" value="&lt;L&gt;"/>
+    <option name="Number" value="18"/>
+  </group>
+  <group name="Keys90">
+    <option name="Action0" value="pageBackward"/>
+    <option name="Action1" value="pageForward"/>
+    <option name="Action10" value="lineBackward"/>
+    <option name="Action11" value="quit"/>
+    <option name="Action12" value="none"/>
+    <option name="Action13" value="clearSelection"/>
+    <option name="Action14" value="lineForward"/>
+    <option name="Action15" value="none"/>
+    <option name="Action2" value="search"/>
+    <option name="Action3" value="gotoSectionEnd"/>
+    <option name="Action4" value="rotate"/>
+    <option name="Action5" value="none"/>
+    <option name="Action6" value="toggleFullscreen"/>
+    <option name="Action7" value="gotoHome"/>
+    <option name="Action8" value="lineBackward"/>
+    <option name="Action9" value="lineForward"/>
+    <option name="Key0" value="&lt;,&gt;"/>
+    <option name="Key1" value="&lt;.&gt;"/>
+    <option name="Key10" value="&lt;LeftArrow&gt;"/>
+    <option name="Key11" value="&lt;Q&gt;"/>
+    <option name="Key12" value="&lt;R&gt;"/>
+    <option name="Key13" value="&lt;Return&gt;"/>
+    <option name="Key14" value="&lt;RightArrow&gt;"/>
+    <option name="Key15" value="&lt;UpArrow&gt;"/>
+    <option name="Key2" value="&lt;/&gt;"/>
+    <option name="Key3" value="&lt;Ctrl&gt;+&lt;G&gt;"/>
+    <option name="Key4" value="&lt;Ctrl&gt;+&lt;R&gt;"/>
+    <option name="Key5" value="&lt;DownArrow&gt;"/>
+    <option name="Key6" value="&lt;F&gt;"/>
+    <option name="Key7" value="&lt;G&gt;"/>
+    <option name="Key8" value="&lt;H&gt;"/>
+    <option name="Key9" value="&lt;L&gt;"/>
+    <option name="Number" value="16"/>
+  </group>
+  <group name="KeysOptions">
+    <option name="UseSeparateBindings" value="true"/>
+  </group>
+  <group name="Options">
+    <option name="BookPath" value=""/>
+    <option name="ScanSubdirs" value="false"/>
+  </group>
+  <group name="PreferencesDialog">
+    <option name="LastOpened" value="lookAndFeelOptions"/>
+  </group>
+  <group name="Rotation">
+    <option name="Angle" value="-1"/>
+  </group>
+  <group name="State">
+    <option name="Angle" value="90"/>
+  </group>
+  <group name="TapScrolling">
+    <option name="Enabled" value="false"/>
+  </group>
+  <group name="Web Browser">
+    <option name="Name" value="Browser"/>
+  </group>
+</config>

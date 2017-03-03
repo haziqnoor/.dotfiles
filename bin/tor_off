@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo sed -i 's@^forward-socks5t   /               127.0.0.1:9050 .@#forward-socks5t   /               127.0.0.1:9050 .@' /etc/privoxy/config
+sudo systemctl stop tor.service
+export http_proxy=
+export https_proxy=

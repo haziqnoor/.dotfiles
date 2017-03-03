@@ -1,0 +1,36 @@
+# Write your default config options here!
+
+[default]
+# display even less output and status messages than with `-quiet`:
+# really-quiet=yes
+
+# disables any otherwise auto-selected internal subtitles:
+nosub=yes
+
+# use a different channel for controlling volume than the default PCM:
+mixer-channel=Master
+
+# software equalizer for hue/saturation control:
+vf=eq
+
+[protocol.dvd]
+profile-desc="profile for dvd:// streams"
+
+# postprocessing subfilters: horizontal and vertical deblocking, deringing, automatic brightness/contrast, ffmpeg deinterlacing filter:
+vf=pp=hb/vb/dr/al/fd
+
+# set English as priority language:
+alang=en
+
+[protocol.dvdnav]
+profile-desc="profile for dvdnav:// streams"
+profile=protocol.dvd
+
+# allow mouse for dvd menu selection:
+mouse-movements=yes
+
+# caching:
+nocache=yes
+
+# aspect for widescreen notebooks
+monitoraspect=16:10

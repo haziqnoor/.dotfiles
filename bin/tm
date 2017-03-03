@@ -1,0 +1,66 @@
+#!/bin/bash
+#
+# This is a script to manage tmux sessions.
+
+MSG="Usage: tm [option] [session1 session2 ...]\n
+\n
+[option]:\n
+-a\tattach to existing session\n
+-d\tdetach an existing session\n
+-k\tkill existing session(s)\n
+\n
+To list available sessions: tm ls\n
+To kill all sessions: tm -ka\n
+\n
+To make a custom-session, create a file in ~/.tmux/\n
+Don't forget to make the file executable (with chmod +x).\n"
+
+# To start a session without a specific name; `tm`:
+if [ $# -lt 1 ]; then
+	tmux
+# To display menu; `tm --help`:
+elif [[ "$1" == "--help" ]]; then
+	echo -e "tm is a wrapper to manage tmux sessions."
+	echo -e $MSG
+	exit 1
+# To list all running-sessions; `tm ls`:
+elif [[ "$1" == "ls" ]] && [ -z "$2" ]; then
+	tmux ls
+# To require a session name after [option]:
+elif [[ "$1" == "-a" ]] || [[ "$1" == "-k" ]] || [[ "$1" == "-d" ]] && [ -z "$2" ]; then
+	echo -e "tm: Please insert the session's name after [option]."
+	echo -e $MSG
+	exit 1
+# To attach a session; `tm -a session`:
+elif [[ "$1" == "-a" ]]; then
+	tmux -2 attach -t $2
+# To detach a session; `tm -d session`:
+elif [[ "$1" == "-d" ]]; then
+	tmux detach -s $2
+# To kill session(s); `tm -k session1 session2 ... n`:
+elif [[ "$1" == "-k" ]]; then
+	for arg in ${@:2}; do
+		tmux kill-session -t $arg
+	done
+# To kill all running sessions `tm -ka`:
+elif [[ "$1" == "-ka" ]]; then
+	tmux kill-server
+# To exit when an unspecified tag is provided:
+elif echo $1 | grep -o "-"; then
+	echo -e "tm: [option] not recognized."
+	echo -e $MSG
+	exit 1
+# To start session(s); `tm session 1 session2 ... n`":
+else
+	for arg in ${@:1}; do
+		if tmux has-session -t $arg &>/dev/null; then
+			tmux -2 attach -t $arg 
+		elif [ -f ~/.tmux/$arg ]; then
+			tmux -2 new -s $arg -d
+			source ~/.tmux/$arg
+		else
+			tmux -2 new -s $arg -d
+		fi
+	done
+	tmux -2 attach -t $1
+fi

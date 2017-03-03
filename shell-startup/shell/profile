@@ -1,0 +1,11 @@
+# WARNING: if you delete .bash_profile, this file becomes part of bash's startup
+# sequence, which means this file suddenly has to cater for two different
+# shells.
+
+. ~/.dotfiles/shell-startup/sh/env
+. ~/.dotfiles/shell-startup/sh/login
+
+# Hide startx messages:
+if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
+  exec startx
+fi

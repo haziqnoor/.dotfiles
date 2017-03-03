@@ -1,0 +1,74 @@
+# Xbindkeys configuration
+
+# Also edit: ~/scripts/keybindmenu
+#
+# Uncomment the lines below if you want to pay attention to them:
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+# "amixer set Master 5+"
+"volume up"
+	XF86AudioRaiseVolume
+# "amixer set Master 5-"
+"volume down"
+	XF86AudioLowerVolume
+# "amixer set Master toggle"
+"volume mute"
+	XF86AudioMute
+
+# Printscreen
+"import ~/inbox/screenshot.jpg && canberra-gtk-play -i camera-shutter -V 11.0"
+	Print
+
+# PCManFM
+"pcmanfm"
+	Mod4 + f
+
+# surf
+"surf"
+	Mod4 + s
+
+# vim
+"st -e sh -c 'cd /home/haziq/docs/ && vim'"
+	Mod4 + v
+
+# ncmpc
+"st -e ncmpc"
+	Mod4 + m
+
+# email
+"chromium --incognito https://mail.protonmail.com/login"
+	Mod4 + e
+
+# chromium
+"chromium --incognito"
+	Mod4 + o
+
+# newsbeuter
+"st -e newsbeuter"
+	Mod4 + n
+
+# connect wls1
+"connect && canberra-gtk-play -i network-connectivity-established -V 10.0"
+	Mod4 + F9
+
+# disconnect wls1
+"disconnect && canberra-gtk-play -i network-connectivity-lost -V 10.0"
+	Mod4 + F10
+
+# unmount all devices
+"devmon --unmount-removable"
+	Mod4 + u
+
+# Keybinds Menu
+"keybindmenu"
+   Mod4 + c:49
+
+# gimp
+"gimp --no-splash"
+	Mod4 + g
+
+# transmission
+"transmission-gtk"
+	Mod4 + t

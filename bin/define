@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Script to ease looking up words from selected dictionaries and thesauri.
+
+(
+sdcv --color -n -u "Webster's Revised Unabridged Dictionary (1913)" "$1";
+sdcv --color -n -u "American Heritage Dictionary 4th Ed. (En-En)" "$1";
+sdcv --color -n -u "Random House Webster's Unabridged Dictionary (En-En)" "$1";
+sdcv --color -n -u "Webster's Third New International Dictionary, Unabridged \
+  (En-En)" "$1";
+sdcv --color -n -u "WordNet" "$1";
+sdcv --color -n -u "Roget's II The New Thesaurus 3th Ed. (En-En)" "$1";
+sdcv --color -n -u "Moby Thesaurus II" "$1";
+) | less -R

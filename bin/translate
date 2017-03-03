@@ -1,0 +1,40 @@
+#!/bin/bash
+
+MSG="Usage: translate [option] word\n
+\n
+[option]:\n
+1\tMandarin-English (Traditional)\n
+2\tMandarin-English (Simplified)\n
+3\tEnglish-Mandarin (Traditional)\n
+4\tEnglish-Mandarin (Simplified)\n
+5\tCantonese-English\n"
+
+if [ $# -lt 1 ]; then
+    echo -e $MSG
+    exit 1
+# traditional mandarin-en
+elif [[ "$1" == "1" ]]; then
+  (
+  sdcv --color -n -u CEDICT漢英辭典 "$2";
+  sdcv --color -n -u 朗道漢英字典5.0 "$2";
+  ) | less -R
+# simplified mandarin-en
+elif [[ "$1" == "2" ]]; then
+  (
+    sdcv --color -n -u CEDICT汉英辞典 "$2";
+    sdcv --color -n -u 朗道汉英字典5.0 "$2";
+  ) | less -R
+# traditional en-mandarin
+elif [[ "$1" == "3" ]]; then
+    sdcv --color -n -u 朗道英漢字典5.0 "$2" | less -R
+# simplified en-mandarin
+elif [[ "$1" == "4" ]]; then
+    sdcv --color -n -u 朗道英汉字典5.0 "$2" | less -R
+# cantonese-en
+elif [[ "$1" == "5" ]]; then
+    sdcv --color -n -u Cantonese-English\ Dictionary "$2" | less -R
+else
+    echo -e "> Are you using the right syntax?"
+    echo -e $MSG
+    exit 1
+fi

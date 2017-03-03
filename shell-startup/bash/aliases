@@ -1,0 +1,1 @@
+alias clh='history -cw && echo > ~/.bash_history && cd && clear'

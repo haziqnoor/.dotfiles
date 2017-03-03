@@ -1,0 +1,24 @@
+. ~/.dotfiles/shell-startup/shell/aliases
+. ~/.dotfiles/shell-startup/shell/functions
+
+# if in a terminal
+if [ -t 0 ]; then
+    # other users shouldn't be able to message by default
+    mesg n
+
+    # enable colours
+#    if [ `tput colors` -ge 8 ]; then
+#    fi
+fi
+
+# Only load Liquid Prompt in interactive shells, not from a script or from scp
+[[ $- = *i* ]] && source ~/src/liquidprompt/liquidprompt
+
+# Autojump
+source /etc/profile.d/autojump.sh
+
+# virtualenv
+source /usr/bin/virtualenvwrapper.sh
+
+# disable Ctrl-S freezing the terminal
+stty -ixon
