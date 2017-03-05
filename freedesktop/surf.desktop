@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=surf
+GenericName=Web Browser
+Comment=Access the Internet
+Categories=Network;WebBrowser
+Terminal=false
+Exec=surf %U
+MimeType=x-scheme-handler/http;x-scheme-handler/https;text/html;
