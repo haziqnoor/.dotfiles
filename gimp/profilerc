@@ -1,0 +1,9 @@
+# GIMP color profile history
+
+(color-profile "Coated GRACoL 2006 (ISO 12647-2:2004)" "file:///usr/share/color/icc/CoatedGRACoL2006.icc")
+(color-profile "M101NWT2 2014-05-29 2.2 S 1xCurve+MTX" "file:///home/haziq/.config/color/icc/devices/display/M101NWT2%202014-05-29%202.2%20S%201xCurve+MTX.icc")
+(color-profile "Adobe RGB (1998)" "file:///usr/share/color/icc/AdobeRGB1998.icc")
+(color-profile "sRGB IEC61966-2-1 black scaled" "file:///usr/share/color/icc/sRGB_IEC61966-2-1_black_scaled.icc")
+(color-profile "sRGB_v4_ICC_preference.icc" "file:///usr/share/color/icc/sRGB_v4_ICC_preference.icc")
+
+# end of color profile history

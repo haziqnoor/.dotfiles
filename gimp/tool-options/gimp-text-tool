@@ -1,0 +1,11 @@
+# GIMP gimp-text-tool options
+
+(foreground (color-rgb 1.000000 1.000000 1.000000))
+(palette "Cryla Daler 6-Basic Colors")
+(font "Helvetica LT Std")
+(font-size 16.000000)
+(font-size-unit points)
+(hint-style full)
+(box-mode fixed)
+
+# end of gimp-text-tool options

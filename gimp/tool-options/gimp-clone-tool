@@ -1,0 +1,9 @@
+# GIMP gimp-clone-tool options
+
+(brush "Soft round")
+(dynamics "0: No Pressure")
+(pattern "Clipboard")
+(palette "Cryla Daler 6-Basic Colors")
+(brush-size 50.360000)
+
+# end of gimp-clone-tool options

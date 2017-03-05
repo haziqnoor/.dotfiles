@@ -1,0 +1,71 @@
+# GIMP gimprc
+# 
+# This is your personal gimprc file.  Any variable defined in this file takes
+# precedence over the value defined in the system-wide gimprc:
+# /etc/gimp/2.0/gimprc
+# Most values can be set within GIMP by changing some options in the
+# Preferences dialog.
+
+(temp-path "/tmp")
+(swap-path "/tmp")
+(brush-path "/home/haziq/.gimp-2.8/brushes")
+(brush-path-writable "/home/haziq/.gimp-2.8/brushes")
+(dynamics-path "/home/haziq/.gimp-2.8/dynamics")
+(dynamics-path-writable "/home/haziq/.gimp-2.8/dynamics")
+(pattern-path "/home/haziq/.gimp-2.8/patterns")
+(pattern-path-writable "/home/haziq/.gimp-2.8/patterns")
+(palette-path "/home/haziq/.gimp-2.8/palettes")
+(palette-path-writable "/home/haziq/.gimp-2.8/palettes")
+(global-brush no)
+(global-dynamics no)
+(global-pattern no)
+(global-gradient no)
+(layer-previews no)
+(layer-preview-size tiny)
+(color-management
+    (mode display)
+    (rgb-profile "/usr/share/color/icc/AdobeRGB1998.icc")
+    (cmyk-profile "/usr/share/color/icc/CoatedGRACoL2006.icc")
+    (display-profile "/home/haziq/.config/color/icc/devices/display/M101NWT2 2014-05-29 2.2 S 1xCurve+MTX.icc")
+    (display-profile-from-gdk no)
+    (printer-profile "/usr/share/color/icc/CoatedGRACoL2006.icc")
+    (display-rendering-intent perceptual)
+    (simulation-rendering-intent relative-colorimetric)
+    (simulation-gamut-check yes)
+    (out-of-gamut-color (color-rgb 0.952941 0.078478 0.572292))
+    (display-module "CdisplayLcms"))
+(save-document-history no)
+(navigation-preview-size tiny)
+(default-view
+    (show-menubar no)
+    (show-statusbar no)
+    (show-rulers no)
+    (show-scrollbars no)
+    (show-selection yes)
+    (show-layer-boundary no)
+    (show-guides yes)
+    (show-grid no)
+    (show-sample-points yes)
+    (padding-mode default)
+    (padding-color (color-rgb 1.000000 1.000000 1.000000)))
+(default-fullscreen-view
+    (show-menubar no)
+    (show-statusbar no)
+    (show-rulers no)
+    (show-scrollbars no)
+    (show-selection yes)
+    (show-layer-boundary no)
+    (show-guides yes)
+    (show-grid no)
+    (show-sample-points yes)
+    (padding-mode default)
+    (padding-color (color-rgb 1.000000 1.000000 1.000000)))
+(default-snap-to-canvas yes)
+(save-session-info no)
+(save-tool-options yes)
+(toolbox-color-area no)
+(theme "Small")
+(show-help-button no)
+
+
+# end of gimprc

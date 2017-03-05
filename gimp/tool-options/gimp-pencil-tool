@@ -1,0 +1,11 @@
+# GIMP gimp-pencil-tool options
+
+(foreground (color-rgb 1.000000 1.000000 1.000000))
+(background (color-rgb 0.000000 0.000000 0.000000))
+(brush "Clipboard")
+(dynamics "0: No Pressure")
+(gradient "FG to BG (RGB)")
+(palette "Cryla Daler 6-Basic Colors")
+(brush-size 4.000000)
+
+# end of gimp-pencil-tool options

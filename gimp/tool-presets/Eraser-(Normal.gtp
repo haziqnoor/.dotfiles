@@ -1,0 +1,21 @@
+# GIMP tool preset file
+
+(stock-id "gimp-tool-eraser")
+(name "Eraser (Normal)")
+(tool-options "GimpEraserOptions"
+    (tool "gimp-eraser-tool")
+    (foreground (color-rgb 1.000000 1.000000 1.000000))
+    (background (color-rgb 0.000000 0.000000 0.000000))
+    (brush "Clipboard")
+    (dynamics "0: No Pressure")
+    (palette "Cryla Daler 6-Basic Colors")
+    (brush-size 34.000000))
+(use-fg-bg no)
+(use-brush yes)
+(use-dynamics yes)
+(use-gradient no)
+(use-pattern no)
+(use-palette no)
+(use-font no)
+
+# end of GIMP tool preset file

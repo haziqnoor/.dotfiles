@@ -1,0 +1,109 @@
+# recently closed docks
+
+(GimpSessionInfo "Brushes, Tool Options, Paint Dynamics, FG/BG"
+    (factory-entry "gimp-dock-window")
+    (position 822 233)
+    (size 200 273)
+    (open-on-exit)
+    (aux-info
+        (show-image-menu "false")
+        (follow-active-image "true"))
+    (gimp-dock
+        (book
+            (current-page 1)
+            (dockable "gimp-brush-grid"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-tool-options"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-color-editor"
+                (tab-style automatic)
+                (aux-info
+                    (current-page "GimpColorSelectorPalette"))))))
+(GimpSessionInfo "Brushes, Paint Dynamics, Tool Options, FG/BG"
+    (factory-entry "gimp-dock-window")
+    (position 822 292)
+    (size 200 272)
+    (open-on-exit)
+    (aux-info
+        (show-image-menu "false")
+        (follow-active-image "true"))
+    (gimp-dock
+        (book
+            (current-page 2)
+            (dockable "gimp-brush-grid"
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-tool-options"
+                (tab-style icon)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-color-editor"
+                (tab-style icon)
+                (aux-info
+                    (current-page "GimpColorSelectorPalette"))))))
+(GimpSessionInfo "Brushes, Paint Dynamics"
+    (factory-entry "gimp-dock-window")
+    (position 0 18)
+    (size 1022 580)
+    (open-on-exit)
+    (aux-info
+        (show-image-menu "false")
+        (follow-active-image "true")
+        (show-image-menu "false")
+        (follow-active-image "true")
+        (show-image-menu "false")
+        (follow-active-image "true"))
+    (gimp-dock
+        (book
+            (current-page 0)
+            (dockable "gimp-brush-grid"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))))
+    (gimp-dock
+        (book
+            (current-page 1)
+            (dockable "gimp-brush-grid"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))))
+    (gimp-dock
+        (book
+            (current-page 1)
+            (dockable "gimp-brush-grid"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true")))
+            (dockable "gimp-dynamics-list"
+                (locked)
+                (tab-style automatic)
+                (aux-info
+                    (show-button-bar "true"))))))
+
+# end of recently closed docks
