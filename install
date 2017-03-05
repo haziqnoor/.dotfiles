@@ -62,6 +62,8 @@ ln -svf ~/.dotfiles/ncmpc/keys ~/.ncmpc/keys
 mkdir -p ~/.FBReader
 ln -svf ~/.dotfiles/FBReader/options.xml ~/.FBReader/options.xml
 ln -svf ~/.dotfiles/FBReader/ui.xml ~/.FBReader/ui.xml
+mkdir -p ~/.config/pcmanfm/default
+ln -svf ~/.dotfiles/pcmanfm.conf ~/.config/pcmanfm/default/pcmanfm.conf
 
 if [ ! -d ~/.gimp-2.8 ]; then ln -svf ~/.dotfiles/gimp/ \
   ~/.gimp-2.8 > /dev/null 2>&1; fi
