@@ -65,3 +65,19 @@ ln -svf ~/.dotfiles/FBReader/ui.xml ~/.FBReader/ui.xml
 
 if [ ! -d ~/.gimp-2.8 ]; then ln -svf ~/.dotfiles/gimp/ \
   ~/.gimp-2.8 > /dev/null 2>&1; fi
+
+mkdir -p ~/.config/inkscape/
+if [ ! -d ~/.config/inkscape/extensions ]; then ln -svf \
+  ~/.dotfiles/inkscape/extensions/ \
+  ~/.config/inkscape/extensions > /dev/null 2>&1; fi
+if [ ! -d ~/.config/inkscape/keys ]; then ln -svf \
+  ~/.dotfiles/inkscape/keys/ \
+  ~/.config/inkscape/keys > /dev/null 2>&1; fi
+if [ ! -d ~/.config/inkscape/palettes ]; then ln -svf \
+  ~/.dotfiles/inkscape/palettes/ \
+  ~/.config/inkscape/palettes > /dev/null 2>&1; fi
+if [ ! -d ~/.config/inkscape/templates ]; then ln -svf \
+  ~/.dotfiles/inkscape/templates/ \
+  ~/.config/inkscape/templates > /dev/null 2>&1; fi
+ln -svf ~/.dotfiles/inkscape/preferences.xml \
+  ~/.config/inkscape/preferences.xml
