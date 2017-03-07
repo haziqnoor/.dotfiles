@@ -4,9 +4,9 @@
 set nocompatible
 
 " treat pathogen.vim as a submodule like other plugins
-source ~/src/vim-plugins/vim-pathogen/autoload/pathogen.vim
+source /home/haziq/src/vim-plugins/vim-pathogen/autoload/pathogen.vim
 " runtime path manipulation using 'plugin/' as dir name; passing absolute path
-execute pathogen#infect('vim-plugins/{}', '~/src/vim-plugins/{}')
+execute pathogen#infect('vim-plugins/{}', '/home/haziq/src/vim-plugins/{}')
 execute pathogen#helptags()
 
 "----- 2 moving around, searching and patterns
@@ -323,35 +323,35 @@ vnoremap <C-a> :call Incr()<CR>
 " Change working directory
 " ~/docs
 function! CWDdocs()
-    cd ~/docs
+    cd /home/haziq/docs
     set noautochdir
     pwd
 endfunction
 cnoremap cdd :call CWDdocs()
 " ~/logs/
 function! CWDlogs()
-    cd ~/logs
+    cd /home/haziq/logs
     set noautochdir
     pwd
 endfunction
 cnoremap cdl :call CWDlogs()
 " ~/src/
 function! CWDsrc()
-    cd ~/src
+    cd /home/haziq/src
     set noautochdir
     pwd
 endfunction
 cnoremap cds :call CWDsrc()
 " ~/tmp/
 function! CWDtmp()
-    cd ~/tmp
+    cd /home/haziq/tmp
     set noautochdir
     pwd
 endfunction
 cnoremap cdt :call CWDtmp()
 " ~/projects/
 function! CWDproj()
-    cd ~/projects
+    cd /home/haziq/projects
     set noautochdir
     pwd
 endfunction
