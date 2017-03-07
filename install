@@ -80,6 +80,8 @@ sudo cp -vpf ~/.dotfiles/freedesktop/fontconfig/freetype2.sh \
   /etc/profile.d/freetype2.sh
 sudo rm /etc/fonts/conf.d/10-scale-bitmap-fonts.conf
 sudo mv /etc/fonts/conf.d/50-user.conf /etc/fonts/conf.d/99-user.conf
+if [ ! -d ~/.config/font-manager ]; then ln -svf ~/.dotfiles/font-manager/ \
+  ~/.config/font-manager > /dev/null 2>&1; fi
 
 if [ ! -d ~/.gimp-2.8 ]; then ln -svf ~/.dotfiles/gimp/ \
   ~/.gimp-2.8 > /dev/null 2>&1; fi
