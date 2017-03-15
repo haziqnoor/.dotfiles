@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=movie
+Exec=movie %f 15
+Categories=Other;
+NoDisplay=true
+MimeType=video/mp4
+Terminal=false

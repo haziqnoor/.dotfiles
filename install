@@ -64,6 +64,9 @@ ln -svf ~/.dotfiles/FBReader/options.xml ~/.FBReader/options.xml
 ln -svf ~/.dotfiles/FBReader/ui.xml ~/.FBReader/ui.xml
 mkdir -p ~/.config/pcmanfm/default
 ln -svf ~/.dotfiles/pcmanfm.conf ~/.config/pcmanfm/default/pcmanfm.conf
+if [ ! -d ~/.config/libfm ]; then ln -svf \
+  ~/.dotfiles/libfm/ \
+  ~/.config/libfm > /dev/null 2>&1; fi
 
 # Freedesktop
 if [ ! -d ~/.local/share/applications ]; then ln -svf \
