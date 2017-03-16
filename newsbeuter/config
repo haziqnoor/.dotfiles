@@ -11,7 +11,7 @@ feedlist-format "%U %t"
 show-read-feeds no
 refresh-on-startup yes  # all feeds will be reloaded when newsbeuter starts up
 reload-time 60  # number of minutes between automatic reloads
-save-path "~/inbox"  # default path where articles shall be saved to
+save-path "~/tmp"  # default path where articles shall be saved to
 feed-sort-order unreadarticlecount-asc
 
 # articlelist
