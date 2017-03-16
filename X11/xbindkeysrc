@@ -72,3 +72,7 @@
 # transmission
 "transmission-gtk"
 	Mod4 + t
+
+# slock
+"slock"
+    XF86Sleep
