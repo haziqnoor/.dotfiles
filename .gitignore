@@ -8,3 +8,4 @@ gimp/themerc
 gimp/unitrc
 freedesktop/desktop-entry/chrome-*
 freedesktop/desktop-entry/mimeinfo.cache
+freedesktop/desktop-entry/userapp*.desktop
