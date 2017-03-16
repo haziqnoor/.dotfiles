@@ -58,7 +58,6 @@ devmon --exec-on-drive 'notify-send \
 xbindkeys &
 displaycal-apply-profiles &
 xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
-conky -d &
 dunst &
 remind -z -k'notify-send -t 0 -i dialog-information "Reminder" %s \
   && canberra-gtk-play -i alarm-clock-elapsed &' ~/.reminders &

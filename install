@@ -42,8 +42,6 @@ ln -svf ~/.dotfiles/Rprofile ~/.Rprofile
 ln -svf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -svf ~/.dotfiles/toprc ~/.toprc
 
-mkdir -p ~/.config/conky
-ln -svf ~/.dotfiles/conky.conf ~/.config/conky/conky.conf
 mkdir -p ~/.config/dunst
 ln -svf ~/.dotfiles/dunstrc ~/.config/dunst/dunstrc
 mkdir -p ~/.mpd
