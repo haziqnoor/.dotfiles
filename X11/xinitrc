@@ -63,11 +63,7 @@ dunst &
 remind -z -k'notify-send -t 0 -i dialog-information "Reminder" %s \
   && canberra-gtk-play -i alarm-clock-elapsed &' ~/.reminders &
 
-# dwm statusbar loop
-while true; do
-	xsetroot -name "$( date '+%b %d %a %R' )";
-	sleep 1m
-done &
+slstatus -d &
 
 # disable Caps Lock
 setxkbmap -option caps:none
