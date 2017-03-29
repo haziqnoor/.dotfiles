@@ -29,6 +29,9 @@ then
     export PATH="$HOME/bin:${PATH}"
 fi
 
+# Don't put command in HISTFILE when preceded with spaces
+export HISTCONTROL='ignorespace'
+
 # Make Java applications use GTK Look and Feel
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
