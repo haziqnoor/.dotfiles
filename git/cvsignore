@@ -11,7 +11,3 @@ Session.vim
 *~
 tags
 tags-*
-
-# gimp
-gimp/contextrc
-gimp/tool-options/*

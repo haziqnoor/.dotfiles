@@ -1,3 +1,5 @@
+gimp/contextrc
+gimp/tool-options/*
 gimp/parasiterc
 gimp/templaterc
 gimp/pluginrc
@@ -6,6 +8,7 @@ gimp/dockrc
 gimp/templaterc
 gimp/themerc
 gimp/unitrc
+
 freedesktop/desktop-entry/chrome-*
 freedesktop/desktop-entry/mimeinfo.cache
 freedesktop/desktop-entry/userapp*.desktop
