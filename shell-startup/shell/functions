@@ -22,3 +22,9 @@ extract() {
      echo "'$1' is not a valid file to extract"
   fi
 }
+
+lack() {
+    # The +k clears the screen (it tries to scroll up but there's nowhere to
+    # go)
+    ack --group --color $* | less -r +k
+}
