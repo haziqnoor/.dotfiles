@@ -3,7 +3,7 @@ alias which-shell='ps -p $$'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
-alias -g "\&"="&>/dev/null&|"
+alias -g \&="</dev/null >/dev/null 2>&1 &"
 alias pid='ps -cvx | grep'
 alias ls='ls --color=always'
 alias grep='grep --color=always'
