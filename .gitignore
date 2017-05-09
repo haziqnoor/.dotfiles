@@ -8,6 +8,7 @@ gimp/dockrc
 gimp/templaterc
 gimp/themerc
 gimp/unitrc
+gimp/tags.xml
 
 freedesktop/desktop-entry/chrome-*
 freedesktop/desktop-entry/mimeinfo.cache
