@@ -154,10 +154,10 @@ color list = black
 color list-bold = black,bold
 
 ## Sets the text color of directories in the browser
-#color browser-directory = yellow
+color browser-directory = black
 
 ## Sets the text color of playlists in the browser
-#color browser-playlist = red
+color browser-playlist = red
 
 ## Set the color of the progress indicator.
 color progressbar = white
@@ -172,7 +172,7 @@ color status-song  = black
 color status-time  = black
 
 ## Text color used to display alerts in the status window.
-#color alert = red,bold
+color alert = red,bold
 
 ## Redefine any of the base colors.
 ## The RGB values must be an integer value between 0 and 1000.
