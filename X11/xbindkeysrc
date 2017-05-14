@@ -57,6 +57,10 @@
 "disconnect && canberra-gtk-play -i network-connectivity-lost -V 10.0"
 	Mod4 + F10
 
+# tor arm
+"st -e sudo -u tor arm"
+    Mod4 + F8
+
 # unmount all devices
 "devmon --unmount-removable"
 	Mod4 + u
