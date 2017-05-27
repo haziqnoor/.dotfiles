@@ -1,5 +1,6 @@
 #!/bin/bash
 
+nmcli radio wifi on
 nmcli dev con wls1
 sudo systemctl restart tor.service ntpd.service
 notify-send -i ~/.icons/Clarity/16x16/status/network-idle.png \
