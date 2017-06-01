@@ -26,16 +26,18 @@
     lsu = ls-files --others --exclude-standard
 
     # ----- Fancy logging
-    # h = head
+    # head
     head = !git r -1
     h = !git head
-    # hp = head with patch
+    # head with patch
     hp = "!. ~/.githelpers && show_git_head"
-    # r = recent commits, only current branch
+    # recent commits, only current branch
     r = !GIT_NO_PAGER=1 git l -10
-    # ra = recent commits, all reachable refs
+    # recent commits, all reachable refs
     ra = !git r --all
-    # l = all commits, only current branch
+    # all commits, only current branch
     l = "!. ~/.githelpers && pretty_git_log"
-    # la = all commits, all reachable refs
+    # all commits, all reachable refs
     la = !git l --all
+    # commits with tags only
+    lt = "!. ~/.githelpers && tags_only"
