@@ -17,8 +17,5 @@ fi
 # Autojump
 source /etc/profile.d/autojump.sh
 
-# virtualenv
-source /usr/bin/virtualenvwrapper.sh
-
 # disable Ctrl-S freezing the terminal
 stty -ixon
