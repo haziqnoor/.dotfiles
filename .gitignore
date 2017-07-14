@@ -9,6 +9,9 @@ gimp/templaterc
 gimp/themerc
 gimp/unitrc
 gimp/tags.xml
+gimp/colorrc
+
+inkscape/preferences.xml
 
 freedesktop/desktop-entry/chrome-*
 freedesktop/desktop-entry/mimeinfo.cache
