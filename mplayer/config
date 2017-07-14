@@ -34,3 +34,6 @@ nocache=yes
 
 # aspect for widescreen notebooks
 monitoraspect=16:10
+
+# order of audio driver to try
+ao=pulse,alsa

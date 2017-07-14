@@ -162,3 +162,6 @@ load-module module-filter-apply
 ### Make some devices default
 #set-default-sink output
 #set-default-source input
+
+# Switch the output sound to the newly connected device
+load-module module-switch-on-connect
