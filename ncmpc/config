@@ -139,7 +139,7 @@ color background = white
 color title = black
 
 ## Set the text color for the title row (the bold part).
-color title-bold = black,bold
+color title-bold = 232,bold
 
 ## Set the color of the line on the second row.
 color line = black
@@ -151,13 +151,13 @@ color line-flags = black
 color list = black
 
 ## Set the bold text color in the main area of ncmpc.
-color list-bold = black,bold
+color list-bold = 232,bold
 
 ## Sets the text color of directories in the browser
 color browser-directory = black
 
 ## Sets the text color of playlists in the browser
-color browser-playlist = black,underline
+color browser-playlist = 244,bold
 
 ## Set the color of the progress indicator.
 color progressbar = none
@@ -172,7 +172,7 @@ color status-song  = black
 color status-time  = black
 
 ## Text color used to display alerts in the status window.
-color alert = black,bold
+color alert = 232,bold
 
 ## Redefine any of the base colors.
 ## The RGB values must be an integer value between 0 and 1000.
