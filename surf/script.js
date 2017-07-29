@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name vimkeybindings
 // @namespace renevier.fdn.fr
-// @author arno 
+// @author arno
 // @licence GPL/LGPL/MPL
 // @description use vim keybingings (i, j, k, l, …) to navigate a web page.
 // ==/UserScript==
@@ -54,13 +54,13 @@ function home() {
 }
 
 function bottom() {
-    window.scroll(document.width, document.height);
+    window.scrollTo(0, document.body.scrollHeight);
 }
 
-// If you don't like default key bindings, customize here. 
+// If you don't like default key bindings, customize here.
 // if you want to use the combination 'Ctrl + b' (for example), use '^b'
 var bindings = {
-    'h' : left, 
+    'h' : left,
     'l' : right,
     'k' : up,
     'j' : down,
@@ -71,7 +71,7 @@ var bindings = {
 }
 
 function isEditable(element) {
-    
+
     if (element.nodeName.toLowerCase() == "textarea")
         return true;
 
@@ -84,13 +84,13 @@ function isEditable(element) {
     if (document.designMode == "on" || element.contentEditable == "true") {
         return true;
     }
-    
+
     return false;
 }
 
 function keypress(evt) {
     var target = evt.target;
-            
+
     // if we're on a editable element, we probably don't want to catch
     // keypress, we just want to write the typed character.
     if (isEditable(target))
@@ -111,8 +111,23 @@ function _pageScroll() {
     // Gecko algorithm
     // ----------------
     // The page increment is the size of the page, minus the smaller of
-    // 10% of the size or 2 lines.  
+    // 10% of the size or 2 lines.
     return window.innerHeight - Math.min(window.innerHeight / 10, 24);
 }
 
 window.addEventListener("keypress", keypress, false);
+
+// ==UserScript==
+// @name untarget
+// @description This script looks for links with “target” attribute set to “_blank” and strips this attribute. This prevents surf from unexpectedy opening new windows. (Opening new windows by middle click or via context menu still works.)
+// @author Dmitrij D. <Czarkoff czarkoff@gmail.com>
+// ==/UserScript==
+function untarget() {
+    var links = document.getElementsByTagName('a');
+    Array.prototype.slice.call(links).forEach(function(anchor, index, arr) {
+        if (anchor["target"] == "_blank")
+            anchor.removeAttribute("target");
+    });
+}
+
+window.onload = untarget;
