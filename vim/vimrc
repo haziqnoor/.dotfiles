@@ -51,7 +51,7 @@ set cursorline
 " ----- 6 multiple windows
 
 " don't unload a buffer when no longer shown in a window
-set hidden
+set nohidden
 
 " ----- 7 multiple tab pages
 " ----- 8 terminal
@@ -176,6 +176,10 @@ nnoremap ]e ddp
 nnoremap ]b :bnext<cr>
 nnoremap [b :bprevious<cr>
 
+" go to next/previous in arglist
+nnoremap ]a :next<cr>
+nnoremap [a :previous<cr>
+
 " go to next/previous in quicklist
 nnoremap ]q :cn<cr>
 nnoremap [q :cp<cr>
@@ -186,10 +190,8 @@ nnoremap [t :tp<cr>
 
 " ----- 18 reading and writing files
 
-" enable using settings from modelines when reading a file
-set modeline
-" number of lines to check for modelines
-set modelines=3
+" disable using settings from modelines when reading a file
+set nomodeline
 " end-of-line format
 set fileformat=unix
 " don't write a backup file before overwriting a file
@@ -252,14 +254,14 @@ let g:eregex_forward_delim = '/' " forward search delimiter
 let g:eregex_backward_delim = '?' " backward search delimiter
 nnoremap <leader>/ :call eregex#toggle()<CR>
 
-" Command-T settings
-let g:CommandTFileScanner='find'
-let g:CommandTTraverseSCM='pwd'
-let g:CommandTMatchWindowReverse=0
-let g:CommandTCancelMap=['<C-x>', '<C-c>', '<ESC>', '<C-[>']
-let g:CommandTCursorLeftMap=['<Left>']
-let g:CommandTBackspaceMap=['<C-h>','<BS>']
-let g:CommandTDeleteMap=['<Del>']
+" CtrlP settings
+let g:ctrlp_map = '<leader>t'
+nnoremap <leader>b :CtrlPBuffer<CR>
+let g:ctrlp_prompt_mappings = { 'PrtClearCache()': ['<c-r>'] }
+let g:ctrlp_match_window = 'bottom,order:ttb'
+let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_switch_buffer = 'E'
+let g:ctrlp_use_caching = 1
 
 " highlight trailing whitespace when opening new buffers
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
