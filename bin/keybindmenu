@@ -1,25 +1,25 @@
 #!/bin/bash
-read -d '' BINDS <<EOF
-\
-st <Super-S-Enter>
-dmenu <Super-p>
-PCManFM <Super-f>
-surf <Super-s>
-vim <Super-v>
-GIMP <Super-g>
-Transmission <Super-t>
-ncmpc <Super-m>
-ProtonMail.com <Super-e>
-Chromium <Super-o>
-Newsbeuter <Super-n>
-Tor Arm <Super-F8>
-Wireless Connect <Super-F9>
-Wireless Disconnect <Super-F10>
-Unmount All Devices <Super-u>
-Keybind Menu <Super-\`>
-Show previous notifications <C-\`>
-Close notification <Spacebar>
-Close all notification <C-Spacebar>
-EOF
-notify-send -i ~/.icons/Clarity/16x16/devices/keyboard.png \
-  -t 0 "Keybindings" "${BINDS}"
+BINDS='
+^fg(white)Keybinds
+^fg(white)st ^fg()<Super-S-Enter>
+^fg(white)dmenu ^fg()<Super-p>
+^fg(white)PCManFM ^fg()<Super-f>
+^fg(white)surf ^fg()<Super-s>
+^fg(white)vim ^fg()<Super-v>
+^fg(white)GIMP ^fg()<Super-g>
+^fg(white)Transmission ^fg()<Super-t>
+^fg(white)ncmpc ^fg()<Super-m>
+^fg(white)ProtonMail.com ^fg()<Super-e>
+^fg(white)Chromium ^fg()<Super-o>
+^fg(white)Newsbeuter ^fg()<Super-n>
+^fg(white)Wireless Connect ^fg()<Super-F9>
+^fg(white)Wireless Disconnect ^fg()<Super-F10>
+^fg(white)Unmount All Devices ^fg()<Super-u>
+^fg(white)Keybind Menu ^fg()<Super-`>
+^fg(white)Show previous notifications ^fg()<C-`>
+^fg(white)Close notification ^fg()<Spacebar>
+^fg(white)Close all notification ^fg()<C-Spacebar>
+'
+(echo ""; echo "$BINDS") | dzen2 -l `echo "$BINDS" | wc -l` -p \
+  -w 300 -x 800 -sa r -bg "#080808" -fg "#b2b2b2"\
+  -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit"
