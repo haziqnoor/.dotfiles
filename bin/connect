@@ -1,6 +1,13 @@
 #!/bin/bash
 
-nmcli radio wifi on && sleep 1 && nmcli dev con wls1
-sudo systemctl restart tor.service ntpd.service
+set -e
+
+sudo systemctl restart dhcpcd.service
+sudo rfkill unblock wifi
+sudo ip link set wls1 up
+sudo wpa_supplicant -B -i wls1 -c /etc/wpa_supplicant/wpa_supplicant.conf
+# sudo dhcpcd wls1
+# vpn_on
+sudo systemctl restart ntpd.service
 notify-send -i ~/.icons/Clarity/16x16/status/network-idle.png \
-  'Network Manager' 'Wireless Enabled'
+  'wpa_supplicant' 'Wireless Enabled'

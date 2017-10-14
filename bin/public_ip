@@ -1,0 +1,6 @@
+#!/bin/bash
+
+ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
+ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
+notify-send  -i ~/.icons/Clarity/16x16/status/network-idle.png \
+  'Your public IP address:' "$ipv4 ($ipv4_location)"

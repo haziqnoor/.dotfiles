@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+
+sudo systemctl restart dhcpcd.service
+tmux new -s vpn -d
+tmux send-keys -t vpn \
+  "sudo openvpn /etc/openvpn/client/nl-free-01.protonvpn.com.udp1194.ovpn" C-m

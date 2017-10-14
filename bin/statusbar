@@ -1,0 +1,21 @@
+#!/bin/bash
+
+# ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
+# ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
+battery=$(acpi -V | grep -m1 "Battery" | sed -E 's/.+: (.+)/\1/')
+temp_input=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input)
+hdd_gb_left=$(df -h | grep "/$" | awk '{print $4}' | sed 's/G//')
+hdd_perc_used=$(df -h | grep "/$" | awk '{print $5}' | sed 's/%//')
+temp=$(( $temp_input/1000 ))
+default="^fg()"
+bold="^fg(white)"
+code=$(echo "
+${bold}Battery: ${default}$battery
+${bold}Temp: ${default}$temp°C
+${bold}HDD: ${default}$hdd_perc_used% used ($hdd_gb_left GB left)
+${bold}Week: ${default}`date '+%V'` ${bold}Day: ${default}`date '+%j'`
+`rem -mc+2`")
+lines=$(echo "$code" | wc -l)
+(echo ""; echo "$code") | dzen2 -l $lines -p -u \
+  -w 645 -x 380 -sa r -fn "Inconsolata:size=12" -bg "#080808" -fg "#b2b2b2"\
+  -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit"

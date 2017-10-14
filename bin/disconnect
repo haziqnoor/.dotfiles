@@ -1,6 +1,12 @@
 #!/bin/bash
 
-nmcli dev discon wls1 && nmcli radio wifi off
-sudo systemctl stop tor.service ntpd.service
+set -e
+
+sudo ip link set wls1 down
+sudo kill -9 $(pidof wpa_supplicant)
+sudo rfkill block wifi
 notify-send -i ~/.icons/Clarity/16x16/status/network-offline.png \
-  'Network Manager' 'Wireless Disabled'
+  'wpa_supplicant' 'Wireless Disabled'
+vpn_off
+sudo systemctl stop ntpd.service
+sudo systemctl stop dhcpcd.service
