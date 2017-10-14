@@ -38,7 +38,7 @@
 	Mod4 + m
 
 # email
-"chromium --incognito https://mail.protonmail.com/login"
+"surf https://mail.protonmail.com/login"
 	Mod4 + e
 
 # chromium
@@ -56,10 +56,6 @@
 # disconnect wls1
 "disconnect && canberra-gtk-play -i network-connectivity-lost -V 10.0"
 	Mod4 + F10
-
-# tor arm
-"st -e sudo -u tor arm"
-    Mod4 + F8
 
 # unmount all devices
 "devmon --unmount-removable"
