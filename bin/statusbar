@@ -1,21 +1,77 @@
 #!/bin/bash
 
-# ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
-# ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
-battery=$(acpi -V | grep -m1 "Battery" | sed -E 's/.+: (.+)/\1/')
-temp_input=$(cat /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp2_input)
+# Color
+bold="^fg(white)"
+
+# Power
+if [ "`cat /sys/class/power_supply/AC/online`" == 1 ]; then
+  ac="^fg(green)[A/C]"
+else
+  ac="^fg(red)[A/C]"
+fi
+if [ -e /sys/class/power_supply/BAT0/ ]; then
+  battery=("^fg(green)[Battery]^fg():"
+  "`cat /sys/class/power_supply/BAT0/capacity`%"
+  "(`cat /sys/class/power_supply/BAT0/status`)"
+  )
+else
+  battery="^fg(red)[Battery]"
+fi
+
+# WIFI
+if [ "$( cat /sys/class/net/wls1/operstate )" == "up" ]; then
+		  essid=$(iwgetid -r )
+      accesspt=$(iwgetid -ar)
+      bitrate=$(iwconfig wls1 | xargs | sed -E 's/.+Bit Rate=(.+) Tx-.+/\1/')
+      quality=$(iwconfig wls1 | xargs | sed -E 's/.+Quality=(.+) Signal.+/\1/')
+      signal=$(iwconfig wls1 | xargs | sed -E \
+        's/.+Signal level=(.+)Rx invalid nwid.+/\1/')
+      ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
+      ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
+      public_ip="^fg() $ipv4($ipv4_location)"
+      ip="${bold}IP:^fg()`ip r | grep default | awk {'print $7'}` "
+      wireless=("^fg(green)[WIFI]^fg()"
+      ${essid}"(${accesspt})"
+      "${bold}Signal: ^fg()${bitrate} (${signal}${quality})"
+      )
+else
+  wireless="^fg(red)[WIFI]"
+  public_ip=""
+fi
+
+# VPN
+if ping -W 1 -c 1 10.8.0.1 ; then
+  vpn="^fg(green)[VPN]"
+else
+  vpn="^fg(red)[VPN]"
+fi
+
+# ALSA
+if [ "$(amixer get Master | tail -1 | awk {'print $6'})" == "[off]" ]; then
+  volume="${bold}Audio: ^fg(red)Mute"
+else
+  volume=("${bold}Audio:^fg()"
+  "$(amixer get Master | tail -1 | awk {'print $4'} | sed -E 's/\[(.+)\]/\1/')"
+  )
+fi
+
+# HDD
 hdd_gb_left=$(df -h | grep "/$" | awk '{print $4}' | sed 's/G//')
 hdd_perc_used=$(df -h | grep "/$" | awk '{print $5}' | sed 's/%//')
-temp=$(( $temp_input/1000 ))
-default="^fg()"
-bold="^fg(white)"
-code=$(echo "
-${bold}Battery: ${default}$battery
-${bold}Temp: ${default}$temp°C
-${bold}HDD: ${default}$hdd_perc_used% used ($hdd_gb_left GB left)
-${bold}Week: ${default}`date '+%V'` ${bold}Day: ${default}`date '+%j'`
+hdd="${bold}HDD: ^fg()$hdd_perc_used% used ($hdd_gb_left GB left)"
+
+# Core temperature
+temp="${bold}Core: ^fg()$(( `cat /sys/class/hwmon/hwmon1/temp2_input`/1000 ))°C"
+
+# dzen output
+code=$(echo -e "
+$ac ${battery[*]}
+${wireless[*]}
+${ip}${vpn}${public_ip}
+${volume[*]} $temp $hdd
+${bold}Week: ^fg()`date '+%V'` ${bold}Day: ^fg()`date '+%j'`
 `rem -mc+2`")
 lines=$(echo "$code" | wc -l)
 (echo ""; echo "$code") | dzen2 -l $lines -p -u \
-  -w 645 -x 380 -sa r -fn "Inconsolata:size=12" -bg "#080808" -fg "#b2b2b2"\
+  -w 650 -x 380 -sa r -fn "Inconsolata:size=12" -bg "#080808" -fg "#b2b2b2"\
   -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit"
