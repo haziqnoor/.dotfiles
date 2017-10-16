@@ -83,6 +83,15 @@ hdd="${bold}HDD: ^fg()$hdd_perc_used% used ($hdd_gb_left GB left)"
 # Core temperature
 temp="${bold}Core: ^fg()$(( `cat /sys/class/hwmon/hwmon1/temp2_input`/1000 ))°C"
 
+# Reminders
+if [ "$(rem)" == "No reminders." ]; then
+  remind="^fg(red)[Reminders]"
+else
+  remind=("^fg(green)[Reminders]\n"
+  "^fg()$(rem | grep -v '^$' | sed 1d)"
+  )
+fi
+
 # dzen output
 code=$(echo -e "
 $ac ${battery[*]}
@@ -90,8 +99,7 @@ ${eth} ${wireless[*]}
 ${vpn}${public_ip}
 ${volume[*]} $temp $hdd
 
-${bold}Week: ^fg()`date '+%V'` ${bold}Day: ^fg()`date '+%j'` ${bold}[Reminders]
-`rem | grep -v '^$' | sed 1d`
+${bold}Week: ^fg()`date '+%V'` ${bold}Day: ^fg()`date '+%j'` ${remind[*]}
 ")
 
 # dzen output dimensions
