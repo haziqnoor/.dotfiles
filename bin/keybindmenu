@@ -9,8 +9,6 @@ BINDS='
 ^fg(white)GIMP ^fg()<Super-g>
 ^fg(white)Transmission ^fg()<Super-t>
 ^fg(white)ncmpc ^fg()<Super-m>
-^fg(white)ProtonMail.com ^fg()<Super-e>
-^fg(white)Chromium ^fg()<Super-o>
 ^fg(white)Newsbeuter ^fg()<Super-n>
 ^fg(white)Wireless Connect ^fg()<Super-F9>
 ^fg(white)Wireless Disconnect ^fg()<Super-F10>
@@ -21,5 +19,5 @@ BINDS='
 ^fg(white)Close all notification ^fg()<C-Spacebar>
 '
 (echo ""; echo "$BINDS") | dzen2 -l `echo "$BINDS" | wc -l` -p \
-  -w 300 -x 800 -sa r -bg "#080808" -fg "#b2b2b2"\
+  -w 300 -x 800 -sa r -bg "#080808" -fg "#b2b2b2" -fn "Titillium:size=12" \
   -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit"

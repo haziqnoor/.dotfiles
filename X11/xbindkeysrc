@@ -37,14 +37,6 @@
 "st -e ncmpc"
 	Mod4 + m
 
-# email
-"surf https://mail.protonmail.com/login"
-	Mod4 + e
-
-# chromium
-"chromium --incognito"
-	Mod4 + o
-
 # newsbeuter
 "st -e newsbeuter"
 	Mod4 + n
