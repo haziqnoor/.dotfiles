@@ -9,7 +9,7 @@ BINDS='
 ^fg(white)GIMP ^fg()<Super-g>
 ^fg(white)Transmission ^fg()<Super-t>
 ^fg(white)ncmpc ^fg()<Super-m>
-^fg(white)Newsbeuter ^fg()<Super-n>
+^fg(white)Newsboat ^fg()<Super-n>
 ^fg(white)Wireless Connect ^fg()<Super-F9>
 ^fg(white)Wireless Disconnect ^fg()<Super-F10>
 ^fg(white)Unmount All Devices ^fg()<Super-u>

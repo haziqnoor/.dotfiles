@@ -37,8 +37,8 @@
 "st -e ncmpc"
 	Mod4 + m
 
-# newsbeuter
-"st -e newsbeuter"
+# newsboat
+"st -e newsboat"
 	Mod4 + n
 
 # connect wls1

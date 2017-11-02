@@ -48,9 +48,8 @@ mkdir -p ~/.config/dunst
 ln -svf ~/.dotfiles/dunstrc ~/.config/dunst/dunstrc
 mkdir -p ~/.mpd
 ln -svf ~/.dotfiles/mpd.conf ~/.mpd/mpd.conf
-mkdir -p ~/.newsbeuter
-ln -svf ~/.dotfiles/newsbeuter/config ~/.newsbeuter/config
-ln -svf ~/.dotfiles/newsbeuter/urls ~/.newsbeuter/urls
+mkdir -p ~/.newsboat
+ln -svf ~/.dotfiles/newsboat/config ~/.newsboat/config
 mkdir -p ~/.surf
 ln -svf ~/.dotfiles/surf/script.js ~/.surf/script.js
 mkdir -p ~/.mplayer
