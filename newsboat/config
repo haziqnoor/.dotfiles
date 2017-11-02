@@ -9,7 +9,7 @@ goto-next-feed no  # search in other feeds for unread articles
 feedlist-title-format "HOME (%u unread, %t total)%?T? - tag ‘%T’&?"
 feedlist-format "%U %t"
 show-read-feeds no
-refresh-on-startup yes  # all feeds will be reloaded when newsbeuter starts up
+refresh-on-startup yes  # all feeds will be reloaded when newsboat starts up
 reload-time 60  # number of minutes between automatic reloads
 save-path "~/tmp"  # default path where articles shall be saved to
 feed-sort-order unreadarticlecount-asc
@@ -25,7 +25,7 @@ search-highlight-colors red black bold
 article-sort-order date-asc
 
 # notification
-notify-format "Newsbeuter: %d new, %n unread"
+notify-format "Newsboat: %d new, %n unread"
 notify-program notify-send
 notify-always yes
 notify-screen yes
