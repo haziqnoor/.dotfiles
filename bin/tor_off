@@ -1,0 +1,8 @@
+#!/bin/bash
+
+sudo sed -i 's@^forward-socks5t   /               127.0.0.1:9050 .@#forward-socks5t   /               127.0.0.1:9050 .@' /etc/privoxy/config
+sudo systemctl stop tor.service
+sudo systemctl restart privoxy.service
+tmux kill-session -t tor &&
+notify-send -i ~/.icons/Clarity/16x16/status/network-offline.png \
+  'tor' 'Connection to TOR network disabled'

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo sed -i 's@^#forward-socks5t   /               127.0.0.1:9050 .@forward-socks5t   /               127.0.0.1:9050 .@' /etc/privoxy/config
+sudo systemctl restart privoxy.service
+sudo systemctl restart tor.service
+tmux new -s tor -d
+tmux send-keys -t tor "sudo -u tor arm" C-m
+notify-send -i ~/.icons/Clarity/16x16/status/network-idle.png \
+  'tor' 'Connecting to tor'

@@ -70,7 +70,7 @@ if [ "$( cat /sys/class/net/wls1/operstate )" == "up" ]; then
   ip="${bold}IP:^fg()`ip r | grep default | grep wls1 | awk {'print $7'}`"
   wifi_status=("^fg(green)[WIFI]^fg()"
   ${essid}"(${accesspt}) ${ip}"
-  "${bold}Signal:^fg()${bitrate}(${signal}${quality})\n"
+  "${bold}Signal:^fg()${bitrate}(${signal}${quality})"
   )
   mac_addr_lookup $iface
   wifi_mac_status="$bold$iface: ^fg()$mac_addr\n"
@@ -85,6 +85,15 @@ if ping -W 1 -c 1 10.8.0.1 ; then
   vpn=" ^fg(green)[VPN]"
 else
   vpn=" ^fg(red)[VPN]"
+fi
+
+# TOR
+tor=$(curl -s https://check.torproject.org/ | cat | grep -m 1 \
+  Congratulations | xargs | awk {'print $1'})
+if [ "$tor" == "Congratulations." ]; then
+  tor_status="^fg(green)[TOR]"
+else
+  tor_status="^fg(red)[TOR]"
 fi
 
 # ALSA
@@ -116,7 +125,9 @@ fi
 # dzen output
 code=$(echo -e "
 $ac ${battery[*]}
-${eth_mac_status} ${wifi_mac_status}${eth_status} ${wifi_status[*]}${vpn}${public_ip} ${volume[*]} $temp $hdd
+${eth_mac_status} ${wifi_mac_status}${eth_status} ${wifi_status[*]}
+${tor_status}${vpn}${public_ip}
+${volume[*]} $temp $hdd
 
 ${bold}Week: ^fg()`date '+%V'` ${bold}Day: ^fg()`date '+%j'` ${remind[*]}
 ")
