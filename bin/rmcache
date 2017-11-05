@@ -1,0 +1,9 @@
+#!/bin/bash
+
+rm -rf ~/.adobe/
+rm -rf ~/.macromedia/
+rm -rf ~/.cache/chromium/*
+rm -rf ~/.local/share/Trash/*
+rm -rf ~/.local/share/webkitgtk/*
+rm -rf ~/.surf/cache/*
+echo "" > ~/.surf/cookies.txt

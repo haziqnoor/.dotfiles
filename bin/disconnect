@@ -10,3 +10,4 @@ notify-send -i ~/.icons/Clarity/16x16/status/network-offline.png \
 vpn_off
 sudo systemctl stop ntpd.service
 sudo systemctl stop dhcpcd.service
+rmcache
