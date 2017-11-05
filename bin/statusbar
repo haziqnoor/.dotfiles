@@ -25,23 +25,41 @@ else
   battery="^fg(red)[Battery]"
 fi
 
-function public_ip_lookup {
+public_ip_lookup () {
   ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
   ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
-  public_ip="^fg() $ipv4($ipv4_location)"
+  public_ip="^fg() $ipv4($ipv4_location)\n"
   return public_ip
 }
 
+mac_addr_lookup () {
+  mac=$(macchanger -s $iface | grep --color=never "Current MAC" | sed -E \
+    's/Current MAC:\s+(.+)/\1/')
+  mac0=$(macchanger -s $iface | grep --color=never "Permanent MAC" | sed -E \
+    's/Permanent MAC:\s+(.+)/\1/')
+  if [ "$mac" == "$mac0" ]; then
+    mac_addr="^fg(red)[MAC] ^fg()$mac"
+  else
+    mac_addr="^fg(green)[MAC] ^fg()$mac"
+  fi
+  return mac_addr
+}
+
 # ETHERNET
+iface="enp3s0"
 if [ "$( cat /sys/class/net/enp3s0/operstate )" == "up" ]; then
   ip="${bold}IP:^fg()`ip r | grep default | grep enp3s0 | awk {'print $7'}`"
-  eth="^fg(green)[Eth] $ip"
+  eth_status="^fg(green)[Eth] $ip\n"
+  mac_addr_lookup $iface
+  eth_mac_status="$bold$iface: ^fg()$mac_addr"
   public_ip_lookup
 else
-  eth="^fg(red)[Eth]"
+  eth_mac_status=""
+  eth_status="^fg(red)[Eth]"
 fi
 
 # WIFI
+iface="wls1"
 if [ "$( cat /sys/class/net/wls1/operstate )" == "up" ]; then
   essid=$(iwgetid -r )
   accesspt=$(iwgetid -ar)
@@ -50,20 +68,23 @@ if [ "$( cat /sys/class/net/wls1/operstate )" == "up" ]; then
   signal=$(iwconfig wls1 | xargs | sed -E \
     's/.+Signal level=(.+)Rx invalid nwid.+/\1/')
   ip="${bold}IP:^fg()`ip r | grep default | grep wls1 | awk {'print $7'}`"
-  wireless=("^fg(green)[WIFI]^fg()"
+  wifi_status=("^fg(green)[WIFI]^fg()"
   ${essid}"(${accesspt}) ${ip}"
-  "${bold}Signal:^fg()${bitrate}(${signal}${quality})"
+  "${bold}Signal:^fg()${bitrate}(${signal}${quality})\n"
   )
+  mac_addr_lookup $iface
+  wifi_mac_status="$bold$iface: ^fg()$mac_addr\n"
   public_ip_lookup
 else
-  wireless="^fg(red)[WIFI]"
+  wifi_status="^fg(red)[WIFI]"
+  wifi_mac_status=""
 fi
 
 # VPN
 if ping -W 1 -c 1 10.8.0.1 ; then
-  vpn="^fg(green)[VPN]"
+  vpn=" ^fg(green)[VPN]"
 else
-  vpn="^fg(red)[VPN]"
+  vpn=" ^fg(red)[VPN]"
 fi
 
 # ALSA
@@ -95,16 +116,14 @@ fi
 # dzen output
 code=$(echo -e "
 $ac ${battery[*]}
-${eth} ${wireless[*]}
-${vpn}${public_ip}
-${volume[*]} $temp $hdd
+${eth_mac_status} ${wifi_mac_status}${eth_status} ${wifi_status[*]}${vpn}${public_ip} ${volume[*]} $temp $hdd
 
 ${bold}Week: ^fg()`date '+%V'` ${bold}Day: ^fg()`date '+%j'` ${remind[*]}
 ")
 
 # dzen output dimensions
 lines=$(echo "$code" | wc -l)
-width=$(( $(echo "$code" | wc -L)*5 ))
+width=$(( $(echo "$code" | wc -L)*6 ))
 pos=$(( 1024-$width ))
 
 # dzen command
