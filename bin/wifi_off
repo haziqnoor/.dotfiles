@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 sudo ip link set wls1 down
 sudo kill -9 $(pidof wpa_supplicant)

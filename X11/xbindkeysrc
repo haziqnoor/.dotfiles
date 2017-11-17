@@ -42,11 +42,11 @@
 	Mod4 + n
 
 # connect wls1
-"connect && canberra-gtk-play -i network-connectivity-established -V 10.0"
+"wifi_on && canberra-gtk-play -i network-connectivity-established -V 10.0"
 	Mod4 + F9
 
 # disconnect wls1
-"disconnect && canberra-gtk-play -i network-connectivity-lost -V 10.0"
+"wifi_off && canberra-gtk-play -i network-connectivity-lost -V 10.0"
 	Mod4 + F10
 
 # unmount all devices
@@ -68,3 +68,7 @@
 # slock
 "slock"
     XF86Sleep
+
+# statusbar
+ "statusbar"
+   Mod4 + F12
