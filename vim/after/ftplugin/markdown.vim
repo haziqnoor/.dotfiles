@@ -49,5 +49,5 @@ nnoremap zzh I#<Space><Esc>
 nnoremap zzh2 I##<Space><Esc>
 
 " …
-nnoremap z.. i<C-v>u2026<Esc>
-inoremap z..<Tab> <C-v>u2026
+nnoremap z3. i<C-v>u2026<Esc>
+inoremap z3.<Tab> <C-v>u2026
