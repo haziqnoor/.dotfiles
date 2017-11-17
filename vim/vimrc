@@ -213,7 +213,7 @@ set noswapfile
 " ----- 20 command line editing
 
 " specify how command line completion works
-set wildmode=longest,list
+set wildmode=list:longest
 " list of patterns to ignore files for file name completion
 set wildignore+=*.tif,*.tiff,*.shp,*.svg,*.png,*.jpg,*.xcf,*.gif,*.sla,*.CR2,*.epub,*.mobi,*.pdf,*.mp4,*.mp3,*.wav,*.flv,*.ogv,*.m4v,*.avi,*.mov,*.wmv,*.ods,*.rar,*.zip,*.bz2,*.7z,*.gz,*.gpx,*.pyc,*.swf
 " command-line completion shows a list of matches
