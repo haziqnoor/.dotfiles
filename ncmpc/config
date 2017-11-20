@@ -17,7 +17,7 @@
 
 ############## Interface ####################
 ## Enable mouse support (if enabled at compile time).
-enable-mouse = no
+enable-mouse = yes
 
 ## A list of screens to cycle through when using
 ## the previous/next screen commands (tab and shift+tab).
