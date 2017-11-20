@@ -54,7 +54,6 @@ devmon --exec-on-drive 'notify-send \
   --exec-on-remove 'notify-send \
   -i hdd_unmount "devmon" "Volume \"%l\" unmounted" \
   && canberra-gtk-play -i device-removed' &
-. ~/src/themes/fehbg &
 xbindkeys &
 displaycal-apply-profiles &
 xcompmgr -c -C -t-5 -l-5 -r4.2 -o.55 &
