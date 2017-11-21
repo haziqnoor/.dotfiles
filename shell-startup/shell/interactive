@@ -11,6 +11,12 @@ if [ -t 0 ]; then
 #    fi
 fi
 
+if [[ "$TERM" != "screen-256color" ]]
+then
+    tmux new-session -A -s "0"
+    exit
+fi
+
 # Only load Liquid Prompt in interactive shells, not from a script or from scp
 [[ $- = *i* ]] && source ~/src/liquidprompt/liquidprompt
 

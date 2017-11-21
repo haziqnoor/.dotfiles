@@ -57,7 +57,7 @@ set nohidden
 " ----- 8 terminal
 
 " show info in the window title
-" set title
+set title
 
 " ----- 9 using the mouse
 
@@ -337,41 +337,41 @@ function! CWDdocs()
     set noautochdir
     pwd
 endfunction
-cnoremap cdd :call CWDdocs()
+cnoremap cdd :call CWDdocs()<CR>
 " ~/logs/
 function! CWDlogs()
     cd /home/haziq/logs
     set noautochdir
     pwd
 endfunction
-cnoremap cdl :call CWDlogs()
+cnoremap cdl :call CWDlogs()<CR>
 " ~/src/
 function! CWDsrc()
     cd /home/haziq/src
     set noautochdir
     pwd
 endfunction
-cnoremap cds :call CWDsrc()
+cnoremap cds :call CWDsrc()<CR>
 " ~/tmp/
 function! CWDtmp()
     cd /home/haziq/tmp
     set noautochdir
     pwd
 endfunction
-cnoremap cdt :call CWDtmp()
+cnoremap cdt :call CWDtmp()<CR>
 " ~/projects/
 function! CWDproj()
     cd /home/haziq/projects
     set noautochdir
     pwd
 endfunction
-cnoremap cdp :call CWDproj()
+cnoremap cdp :call CWDproj()<CR>
 " Make current filepath as working directory
 function! CWDfilepath()
     set autochdir
     pwd
 endfunction
-cnoremap cdf :call CWDfilepath()
+cnoremap cdf :call CWDfilepath()<CR>
 
 " turn on Word Processor Mode for current buffer
 function! WordProcessorMode()
@@ -388,6 +388,15 @@ function! WordProcessorMode()
 endfunction
 com! WP call WordProcessorMode()
 
-" fix tmux window title
-autocmd BufReadPost,FileReadPost,BufNewFile,BufEnter * call system("tmux rename-window '" . expand("%:t") . "'")
-autocmd VimLeave * call system("tmux setw automatic-rename")
+" Tmux Window Title Fix
+function! FixTmuxWindowTitle()
+    execute "silent !tmux rename-window '" . expand("%:t") . "'"
+endfunction
+function! RestoreTmuxWindowTitle()
+    execute "silent !tmux setw automatic-rename"
+endfunction
+if exists('$TMUX')
+    autocmd BufEnter * call FixTmuxWindowTitle()
+    autocmd VimLeave * call RestoreTmuxWindowTitle()
+    nnoremap <silent> <C-z> :call RestoreTmuxWindowTitle()<CR>:suspend<bar>:call FixTmuxWindowTitle()<CR>
+endif

@@ -1,1 +1,2 @@
 alias clh='rm $HISTFILE && cd && clear'
+alias -g '\&'='</dev/null >/dev/null 2>&1 &'
