@@ -11,7 +11,7 @@ if [ -t 0 ]; then
 #    fi
 fi
 
-if [[ "$TERM" != "screen-256color" ]]
+if [[ "$TERM" != "tmux-256color" ]]
 then
     tmux new-session -A -s "0"
     exit
