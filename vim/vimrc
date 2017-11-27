@@ -55,10 +55,6 @@ set nohidden
 
 " ----- 7 multiple tab pages
 " ----- 8 terminal
-
-" show info in the window title
-set title
-
 " ----- 9 using the mouse
 
 " enable mouse in all modes
@@ -387,16 +383,3 @@ function! WordProcessorMode()
     setlocal linebreak
 endfunction
 com! WP call WordProcessorMode()
-
-" Tmux Window Title Fix
-function! FixTmuxWindowTitle()
-    execute "silent !tmux rename-window '" . expand("%:t") . "'"
-endfunction
-function! RestoreTmuxWindowTitle()
-    execute "silent !tmux setw automatic-rename"
-endfunction
-if exists('$TMUX')
-    autocmd BufEnter * call FixTmuxWindowTitle()
-    autocmd VimLeave * call RestoreTmuxWindowTitle()
-    nnoremap <silent> <C-z> :call RestoreTmuxWindowTitle()<CR>:suspend<bar>:call FixTmuxWindowTitle()<CR>
-endif
