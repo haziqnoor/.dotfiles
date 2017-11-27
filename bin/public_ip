@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
 ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')

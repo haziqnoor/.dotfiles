@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Script to ease looking up words from selected dictionaries and thesauri.
 

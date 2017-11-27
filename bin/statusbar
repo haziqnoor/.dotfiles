@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Color
 bold="^fg(white)"
@@ -29,7 +29,7 @@ public_ip_lookup () {
   ipv4=$(dig +short myip.opendns.com @resolver1.opendns.com)
   ipv4_location=$(geoiplookup $ipv4 | sed -E 's/.+: (.+)/\1/')
   public_ip="^fg() $ipv4($ipv4_location)\n"
-  return public_ip
+  # return public_ip
 }
 
 mac_addr_lookup () {
@@ -42,7 +42,7 @@ mac_addr_lookup () {
   else
     mac_addr="^fg(green)[MAC] ^fg()$mac"
   fi
-  return mac_addr
+  # return mac_addr
 }
 
 # ETHERNET
@@ -81,7 +81,7 @@ else
 fi
 
 # VPN
-if ping -W 1 -c 1 10.8.0.1 ; then
+if ping -W 1 -c 1 10.8.0.1 > /dev/null 2>&1; then
   vpn=" ^fg(green)[VPN]"
 else
   vpn=" ^fg(red)[VPN]"
@@ -140,4 +140,5 @@ pos=$(( 1024-$width ))
 # dzen command
 (echo ""; echo "$code") | dzen2 -l $lines -p \
   -w $width -x $pos -sa r -fn "Inconsolata:size=12" -bg "#080808" -fg "#b2b2b2"\
-  -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit"
+  -e "onstart=uncollapse,hide,grabkeys;button1=exit;key_space=ungrabkeys,exit" \
+  > /dev/null 2>&1

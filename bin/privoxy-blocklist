@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/sh
 
 . /home/haziq/src/privoxy-blocklist/privoxy-blocklist.sh
 systemctl restart privoxy.service

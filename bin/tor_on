@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 sudo sed -i 's@^#forward-socks5t   /               127.0.0.1:9050 .@forward-socks5t   /               127.0.0.1:9050 .@' /etc/privoxy/config
 sudo systemctl restart privoxy.service

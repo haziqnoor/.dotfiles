@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 [[ "$1" == "up" ]] && amixer set Master 5%+
 [[ "$1" == "down" ]] && amixer set Master 5%-

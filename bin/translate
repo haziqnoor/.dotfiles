@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 MSG="Usage: translate [option] word\n
 \n

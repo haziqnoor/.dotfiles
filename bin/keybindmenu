@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 BINDS='
 ^fg(white)Keybinds
 ^fg(white)st ^fg()<Super-S-Enter>
 ^fg(white)dmenu ^fg()<Super-p>
-^fg(white)PCManFM ^fg()<Super-f>
+^fg(white)ranger ^fg()<Super-f>
 ^fg(white)surf ^fg()<Super-s>
 ^fg(white)vim ^fg()<Super-v>
 ^fg(white)GIMP ^fg()<Super-g>
