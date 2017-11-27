@@ -1,26 +1,7 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir -p ~/.config
 mkdir -p ~/.local/share
-
-# Shell startup Files
-ln -svf ~/.dotfiles/shell-startup/zsh/interactive ~/.zshrc
-ln -svf ~/.dotfiles/shell-startup/zsh/env ~/.zshenv
-ln -svf ~/.dotfiles/shell-startup/bash/logout ~/.bash_logout
-ln -svf ~/.dotfiles/shell-startup/zsh/zprofile ~/.zprofile
-ln -svf ~/.dotfiles/shell-startup/shell/profile ~/.profile
-ln -svf ~/.dotfiles/shell-startup/bash/bashrc ~/.bashrc
-ln -svf ~/.dotfiles/shell-startup/bash/bash_profile ~/.bash_profile
-ln -svf ~/.dotfiles/shell-startup/shell/inputrc ~/.inputrc
-if [ ! -f ~/.hushlogin ]; then touch ~/.hushlogin; fi
-mkdir -p ~/.zkbd
-ln -svf ~/.dotfiles/shell-startup/zsh/zkbd/st-256color-:0 ~/.zkbd/st-256color-:0
-mkdir -p ~/.config/liquidprompt
-ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquidpromptrc ~/.liquidpromptrc
-ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.ps1 \
-  ~/.config/liquidprompt/liquid.ps1
-ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.theme \
-  ~/.config/liquidprompt/liquid.theme
 
 # git
 ln -svf ~/.dotfiles/git/gitconfig ~/.gitconfig
@@ -61,24 +42,16 @@ ln -svf ~/.dotfiles/ncmpc/keys ~/.ncmpc/keys
 mkdir -p ~/.FBReader
 ln -svf ~/.dotfiles/FBReader/options.xml ~/.FBReader/options.xml
 ln -svf ~/.dotfiles/FBReader/ui.xml ~/.FBReader/ui.xml
-mkdir -p ~/.config/pcmanfm/default
-ln -svf ~/.dotfiles/pcmanfm.conf ~/.config/pcmanfm/default/pcmanfm.conf
-if [ ! -d ~/.config/libfm ]; then ln -svf \
-  ~/.dotfiles/libfm/ \
-  ~/.config/libfm > /dev/null 2>&1; fi
 
-# Freedesktop
-if [ ! -d ~/.local/share/applications ]; then ln -svf \
-  ~/.dotfiles/freedesktop/desktop-entry/ \
-  ~/.local/share/applications > /dev/null 2>&1; fi
+# fontconfig
 mkdir -p ~/.config/fontconfig/conf.d
-ln -svf ~/.dotfiles/freedesktop/fontconfig/fonts.conf \
+ln -svf ~/.dotfiles/fontconfig/fonts.conf \
   ~/.config/fontconfig/fonts.conf
-ln -svf ~/.dotfiles/freedesktop/fontconfig/conf.d/70-no-bitmaps.conf \
+ln -svf ~/.dotfiles/fontconfig/conf.d/70-no-bitmaps.conf \
   ~/.config/fontconfig/conf.d/70-no-bitmaps.conf
-ln -svf ~/.dotfiles/freedesktop/fontconfig/conf.d/20-no-embedded.conf \
+ln -svf ~/.dotfiles/fontconfig/conf.d/20-no-embedded.conf \
   ~/.config/fontconfig/conf.d/20-no-embedded.conf
-sudo cp -vpf ~/.dotfiles/freedesktop/fontconfig/freetype2.sh \
+sudo cp -vpf ~/.dotfiles/fontconfig/freetype2.sh \
   /etc/profile.d/freetype2.sh
 sudo rm /etc/fonts/conf.d/10-scale-bitmap-fonts.conf
 sudo mv /etc/fonts/conf.d/50-user.conf /etc/fonts/conf.d/99-user.conf

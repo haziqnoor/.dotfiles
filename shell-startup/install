@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Shell startup Files
+ln -svf ~/.dotfiles/shell-startup/zsh/interactive ~/.zshrc
+ln -svf ~/.dotfiles/shell-startup/zsh/env ~/.zshenv
+ln -svf ~/.dotfiles/shell-startup/bash/logout ~/.bash_logout
+ln -svf ~/.dotfiles/shell-startup/zsh/zprofile ~/.zprofile
+ln -svf ~/.dotfiles/shell-startup/shell/profile ~/.profile
+ln -svf ~/.dotfiles/shell-startup/bash/bashrc ~/.bashrc
+ln -svf ~/.dotfiles/shell-startup/bash/bash_profile ~/.bash_profile
+ln -svf ~/.dotfiles/shell-startup/shell/inputrc ~/.inputrc
+if [ ! -f ~/.hushlogin ]; then touch ~/.hushlogin; fi
+mkdir -p ~/.zkbd
+ln -svf ~/.dotfiles/shell-startup/zsh/zkbd/st-256color-:0 ~/.zkbd/st-256color-:0
+mkdir -p ~/.config/liquidprompt
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquidpromptrc ~/.liquidpromptrc
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.ps1 \
+  ~/.config/liquidprompt/liquid.ps1
+ln -svf ~/.dotfiles/shell-startup/liquidprompt/liquid.theme \
+  ~/.config/liquidprompt/liquid.theme
+
