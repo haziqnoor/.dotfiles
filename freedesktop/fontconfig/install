@@ -1,7 +1,0 @@
-mkdir -p ~/.config/fontconfig/conf.d
-ln -svf ~/.dotfiles/freedesktop/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
-ln -svf ~/.dotfiles/freedesktop/fontconfig/conf.d/70-no-bitmaps.conf ~/.config/fontconfig/conf.d/70-no-bitmaps.conf
-ln -svf ~/.dotfiles/freedesktop/fontconfig/conf.d/20-no-embedded.conf ~/.config/fontconfig/conf.d/20-no-embedded.conf
-sudo cp -vpf ~/.dotfiles/freedesktop/fontconfig/freetype2.sh /etc/profile.d/freetype2.sh
-sudo rm /etc/fonts/conf.d/10-scale-bitmap-fonts.conf
-sudo mv /etc/fonts/conf.d/50-user.conf /etc/fonts/conf.d/99-user.conf

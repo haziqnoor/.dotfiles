@@ -21,8 +21,8 @@
 "import ~/tmp/screenshot.jpg && canberra-gtk-play -i camera-shutter -V 11.0"
 	Print
 
-# PCManFM
-"pcmanfm"
+# ranger
+"st -e ranger"
 	Mod4 + f
 
 # surf
