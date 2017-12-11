@@ -11,8 +11,13 @@ if [ -t 0 ]; then
 #    fi
 fi
 
-if [[ "$TERM" != "tmux-256color" ]]
-then
+# tmux autostart and title fixes
+if [[ "$TERM" = "tmux-256color" ]]; then
+    precmd(){
+        # Auto-restore tmux-title to 'zsh:~'
+        print -Pn "\e]2;zsh:%~\a"
+    }
+else
     tmux new-session -A -s "0"
     exit
 fi
