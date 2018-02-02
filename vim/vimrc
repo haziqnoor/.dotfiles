@@ -56,10 +56,6 @@ set nohidden
 " ----- 7 multiple tab pages
 " ----- 8 terminal
 " ----- 9 using the mouse
-
-" enable mouse in all modes
-set mouse=a
-
 " ----- 10 printing
 " ----- 11 messages and info
 
