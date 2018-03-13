@@ -28,3 +28,4 @@ alias terrainsculptor='java -jar /home/haziq/src/OSUCartography/TerrainSculptor.
 alias screepainter='java -jar /home/haziq/src/OSUCartography/ScreePainter.jar'
 alias pyramidshader='java -jar /home/haziq/src/OSUCartography/PyramidShader.jar'
 alias tm='tmux'
+alias ra='ranger'
