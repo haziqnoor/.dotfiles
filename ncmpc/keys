@@ -16,12 +16,12 @@ key pgup = 2
 key pgdn = 6
 
 ## Range selection
-key range-select = 'v'
-
-## Scroll up one line
-key scroll-down-line = 0
+key range-select = 'V'
 
 ## Scroll down one line
+key scroll-down-line = 0
+
+## Scroll up one line
 key scroll-up-line = 0
 
 ## Scroll up half a screen
@@ -58,10 +58,10 @@ key volume-up = 43,  '0'
 key volume-down = 45,  '9'
 
 ## Select/deselect song in queue
-key select = 'V'
+key select = 22
 
 ## Select all listed items
-key select_all = 22
+key select_all = 'v'
 
 ## Delete song from queue
 key delete = 330,  'd',  'x'
