@@ -1,8 +1,8 @@
 #! /bin/sh
 # remind me, its important!
-# Swapped from <http://linux4all.dreamwidth.org/14455.html>
 
-MSG="Usage: remme 50m Rinse laundry\n"
+MSG="Usage: remme [option] 30m Rinse laundry\n
+\n[option]:\n-d DELAY: time to wait before starting the timer (with 5s countdown)"
 title="Reminder"
 message="${@:2}"
 
@@ -12,6 +12,14 @@ if [ $# -lt 1 ]; then
 elif [[ "$1" == "--help" ]]; then
 	echo -e $MSG
   exit 1
+elif [[ "$1" == "-d" ]]; then
+    message="${@:4}"
+    sleep $2 && \
+      aplay -q ~/docs/sound.fx/5s.countdown.beep.wav >/dev/null 2>&1 && \
+      notify-send -t 0 -i dialog-information "$title" "START: $message" && \
+      sleep $3 && \
+      notify-send -t 0 -i dialog-information "$title" "STOP: $message" && \
+      canberra-gtk-play -i alarm-clock-elapsed >/dev/null 2>&1 &
 else
   sleep $1 && notify-send -t 0 -i dialog-information "$title" "$message" && \
     canberra-gtk-play -i alarm-clock-elapsed >/dev/null 2>&1 &
