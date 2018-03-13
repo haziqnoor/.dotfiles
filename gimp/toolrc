@@ -33,6 +33,12 @@
 (GimpToolInfo "gimp-color-balance-tool"
     (stock-id "gimp-tool-color-balance")
     (visible yes))
+(GimpToolInfo "gimp-text-tool"
+    (stock-id "gimp-tool-text")
+    (visible yes))
+(GimpToolInfo "gimp-align-tool"
+    (stock-id "gimp-tool-align")
+    (visible yes))
 (GimpToolInfo "gimp-by-color-select-tool"
     (stock-id "gimp-tool-by-color-select")
     (visible no))
@@ -57,9 +63,6 @@
 (GimpToolInfo "gimp-move-tool"
     (stock-id "gimp-tool-move")
     (visible no))
-(GimpToolInfo "gimp-align-tool"
-    (stock-id "gimp-tool-align")
-    (visible no))
 (GimpToolInfo "gimp-rotate-tool"
     (stock-id "gimp-tool-rotate")
     (visible no))
@@ -74,9 +77,6 @@
     (visible no))
 (GimpToolInfo "gimp-cage-tool"
     (stock-id "gimp-tool-cage")
-    (visible no))
-(GimpToolInfo "gimp-text-tool"
-    (stock-id "gimp-tool-text")
     (visible no))
 (GimpToolInfo "gimp-bucket-fill-tool"
     (stock-id "gimp-tool-bucket-fill")
